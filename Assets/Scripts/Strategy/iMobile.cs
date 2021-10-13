@@ -5,8 +5,6 @@ using UnityEngine;
 public interface iMobile // Can move and attack
 {
         void Idle();
-        void Walk(Vector2 dir);
-    
         void Attack(int dmg);
 
         bool Patrol();
@@ -15,5 +13,5 @@ public interface iMobile // Can move and attack
 
         void Move(Vector2 dir, float speed);
         
-        void Run(Vector2 dir);
+    
 }
