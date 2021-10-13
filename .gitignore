@@ -11,6 +11,7 @@
 /[Mm]emoryCaptures/
 /[Aa]ssets/[Hh]ierarchy 2/
 /[Aa]ssets/[Hh]ierarchy 2/**.meta
+/[Aa]ssets/Hierarchy 2.meta
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
