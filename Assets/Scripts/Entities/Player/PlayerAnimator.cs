@@ -12,14 +12,33 @@ public class PlayerAnimator : MonoBehaviour
         _playerAnimator = GetComponent<Animator>();
     }
 
-    public void MoveAnimation(float speed)
+    public void MoveAnimation(float dir)
     {
-        _playerAnimator.SetFloat(PlayerAnimParameters.Vel,speed);
+        _playerAnimator.SetFloat(PlayerAnimParameters.RunDir,dir);
+        _playerAnimator.SetBool(PlayerAnimParameters.IsRunning,true);
     }
+
     
     public void IdleAnimation()
     {
-        _playerAnimator.SetFloat(PlayerAnimParameters.Vel,0f);
+        _playerAnimator.SetBool(PlayerAnimParameters.IsRunning,false);
+    }
+
+    public void JumpAnimation()
+    {
+        _playerAnimator.SetBool(PlayerAnimParameters.OnAir,true);
+    }
+
+    public void FallAnimation()
+    {
+        _playerAnimator.SetBool(PlayerAnimParameters.IsTouchingGround,false);
+        _playerAnimator.SetBool(PlayerAnimParameters.OnAir,true);
+    }
+
+    public void LandAnimation()
+    {
+        _playerAnimator.SetBool(PlayerAnimParameters.OnAir,false);
+        _playerAnimator.SetBool(PlayerAnimParameters.IsTouchingGround,true);
     }
     
 

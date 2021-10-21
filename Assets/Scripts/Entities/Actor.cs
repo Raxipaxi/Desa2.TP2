@@ -40,6 +40,11 @@ public class Actor : MonoBehaviour, IDamageable, iMobile
     {
     }
 
+    public virtual void Jump()
+    {
+        
+    }
+
     public virtual bool Patrol()
     {
         throw new NotImplementedException();

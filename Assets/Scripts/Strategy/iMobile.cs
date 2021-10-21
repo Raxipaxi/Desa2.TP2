@@ -11,6 +11,8 @@ public interface iMobile // Can move and attack
 
         void Chase();
 
+        void Jump();
+
         void Move(Vector2 dir, float speed);
         
     

@@ -3,7 +3,8 @@ public interface iInput
 {    
     float GetH { get; }
     float GetV { get; }
-    bool IsMoving();
+    bool IsRunning();
     bool IsAttacking();
+    bool IsJumping();
     void UpdateInputs();
 }

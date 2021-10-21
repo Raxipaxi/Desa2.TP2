@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Unity;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour, iInput
@@ -12,30 +11,23 @@ public class PlayerInput : MonoBehaviour, iInput
     float _yAxis;
     #endregion
     
-    #region Properties
-
-    private Rigidbody2D _rb;
-    
-    #endregion
-    
-    void Awake()
+    public bool IsRunning()
     {
-        _rb = GetComponent<Rigidbody2D>();
-    }
-
-    public bool IsMoving()
-    {
-        return (GetH != 0 || GetV != 0);
+        return (GetH != 0); 
     }
 
     public bool IsAttacking()
     {
-        throw new System.NotImplementedException();
+        return Input.GetKeyDown(KeyCode.Z);
+    }    
+    
+    public bool IsJumping()
+    {
+        return Input.GetKeyDown(KeyCode.Space);
     }
 
     public void UpdateInputs()
     {
-        _xAxis = Input.GetAxis("Horizontal");
-        _yAxis = Input.GetAxis("Vertical");
+        _xAxis = Input.GetAxisRaw("Horizontal");
     }
 }

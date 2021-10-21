@@ -1,8 +1,11 @@
 ﻿public enum PlayerStates 
 {
     Idle,
-    Move,
-    Shoot,
+    Run,
+    Attack,
+    Jump,
+    Fall,
+    Land,
     Dead,
     Heal,
     Damage
@@ -10,6 +13,10 @@
 
 public static class PlayerAnimParameters
 {
-    public const string Vel   = "Vel";
     public const string OnAir = "OnAir";
+    public const string RunDir = "RunDir";
+    public const string IsRunning = "IsRunning";
+    public const string IsTouchingGround = "IsTouchingGround";
+    public const string ChangeDir = "ChangeDir";
+    
 }
