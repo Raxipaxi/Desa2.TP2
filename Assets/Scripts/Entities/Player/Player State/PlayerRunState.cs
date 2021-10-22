@@ -24,7 +24,7 @@ public class PlayerRunState<T> : State<T>
         
         if (_playerInput.IsRunning())
         {
-            if (!_player.IsFalling())
+            if (_player.CheckIfGrounded())
             {
                 Vector2 dir = new Vector2(h,0);
                 _player.Move(dir, _player.GetSpeed());

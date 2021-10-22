@@ -2,125 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc10c66-34c3-430c-98ea-df313a8ee755" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_AttackWhitMove.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_AttackWhitMove.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerFallState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerFallState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerIdleState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerIdleState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerJumpState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerJumpState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerLandState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerLandState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerRunState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerRunState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_Attack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_Attack.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_Attack2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_Attack2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_Attack2NoMovement.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_Attack2NoMovement.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_AttackCombo2hit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_AttackCombo2hit.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_AttackComboNoMovement.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_AttackComboNoMovement.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_AttackNoMovement.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_AttackNoMovement.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_Crouch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_Crouch.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchAttack.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchAttack.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchFull.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchFull.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchTransition.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchTransition.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchWalk.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchWalk.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Jump.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Jump/_Fall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Jump/_Fall.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Jump/_Jump.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Jump/_Jump.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Jump/_JumpFallInbetween.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Jump/_JumpFallInbetween.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_Dash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_Dash.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_Death.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_Death.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_DeathNoMovement.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_DeathNoMovement.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_Roll.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_Roll.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_Run.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_Run.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_RunL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Run-Dash/_RunL.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Attack1.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Attack1.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_ChangeDir.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_ChangeDir.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Idle.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_JumpFall.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_JumpFall.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Run.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Run.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Hierarchy 2.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Hierarchy 2.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Actor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Actor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerFallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerFallState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerIdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerRunState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerRunState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerAnimator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Strategy/iInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Strategy/iInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Strategy/iMobile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Strategy/iMobile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/decorative_obj.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/decorative_obj.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Attack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Attack.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Attack2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Attack2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Attack2NoMovement.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Attack2NoMovement.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_AttackCombo2hit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_AttackCombo2hit.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_AttackComboNoMovement.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_AttackComboNoMovement.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_AttackNoMovement.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_AttackNoMovement.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Crouch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Crouch.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_CrouchAttack.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_CrouchAttack.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_CrouchFull.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_CrouchFull.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_CrouchTransition.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_CrouchTransition.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_CrouchWalk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_CrouchWalk.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Dash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Dash.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Death.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Death.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_DeathNoMovement.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_DeathNoMovement.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Fall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Fall.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Idle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Idle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Jump.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Jump.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_JumpFallInbetween.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_JumpFallInbetween.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Roll.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Roll.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Run.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Run.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/castle_env.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/castle_env.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/env_mon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/env_mon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/env_trees.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/env_trees.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/main_background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/main_background.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/top_far_bgrnd.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/top_far_bgrnd.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/wood_env.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/wood_env.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +97,7 @@
       <workItem from="1634599099870" duration="1059000" />
       <workItem from="1634737974212" duration="7479000" />
       <workItem from="1634760762409" duration="13381000" />
-      <workItem from="1634822658884" duration="4740000" />
+      <workItem from="1634822658884" duration="17723000" />
     </task>
     <servers />
   </component>

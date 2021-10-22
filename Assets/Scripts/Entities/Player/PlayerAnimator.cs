@@ -12,7 +12,7 @@ public class PlayerAnimator : MonoBehaviour
         _playerAnimator = GetComponent<Animator>();
     }
 
-    public void MoveAnimation(float dir)
+    public void RunAnimation(float dir)
     {
         _playerAnimator.SetFloat(PlayerAnimParameters.RunDir,dir);
         _playerAnimator.SetBool(PlayerAnimParameters.IsRunning,true);

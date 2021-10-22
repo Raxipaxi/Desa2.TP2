@@ -9,6 +9,7 @@ public class Player : Actor
     private Rigidbody2D _rb;
     private float VelY => _rb.velocity.y;
     [SerializeField] private float _speed;
+    [SerializeField] private float _speedFallPen;
     [SerializeField] private float _jump;
     [SerializeField] private float groundDistance = 0.2f;
     [SerializeField] private LayerMask groundDetectionList;
@@ -28,9 +29,15 @@ public class Player : Actor
         isJumping = false;
     }
 
+    public override void Idle()
+    {
+        _rb.velocity=new Vector2(0f,VelY);
+        isJumping = false;
+        _animator.IdleAnimation();
+    }
     public override void Move(Vector2 dir,float speed)
     {
-        var currDir = new Vector2(dir.x * speed,0);
+        var currDir = new Vector2(dir.x * speed,VelY);
         _rb.velocity = currDir;
         
         if (isFacingRight && dir.x<0)
@@ -42,24 +49,28 @@ public class Player : Actor
             Flip();
         }
 
-        if (!IsJumping()&& VelY.Equals(Vector2.zero.y))
+        if (!IsJumping()&&CheckIfGrounded())
         {
-           _animator.MoveAnimation(currDir.normalized.x);
+           _animator.RunAnimation(currDir.normalized.x);
         }
     }
 
-    public bool IsFalling()
+    public float GetSpeed()
     {
-        return VelY<Vector2.zero.y;
+        return _speed;
+    }    
+    public float GetFallSpeed()
+    {
+        return _speed-_speedFallPen;
     }
     
-    public override void Idle()
+    private void Flip() 
     {
-        _rb.velocity=new Vector2(0f,VelY);
-        isJumping = false;
-        _animator.IdleAnimation();
+        _transform.Rotate(0f, 180f, 0f);
+        isFacingRight = !isFacingRight;
     }
 
+    #region JumpFall
     public override void Jump()
     {
         isJumping = true;
@@ -70,42 +81,26 @@ public class Player : Actor
             _rb.AddForce(jumpForce, ForceMode2D.Impulse);
         }
         _animator.JumpAnimation();
-
     }
-
     public void Fall()
     {
         _animator.FallAnimation();
     }
-
     public void Land()
     {
         _animator.LandAnimation();
     }
-
-    public bool CheckIfGrounded()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundDetectionList);
-        Debug.DrawRay(_transform.position, Vector2.down*groundDistance, Color.magenta);
-        if(hit.collider != null)
-            return true;
-        return false;
-    }
-    public float GetSpeed()
-    {
-        return _speed;
-    }
-    
-    private void Flip() 
-    {
-        _transform.Rotate(0f, 180f, 0f);
-        isFacingRight = !isFacingRight;
-    }
-
     public bool IsJumping()
     {
         return isJumping;
     }
-    
-    
+    public bool CheckIfGrounded()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundDetectionList);
+        Debug.DrawRay(_transform.position, Vector2.down*groundDistance, Color.cyan);
+        if(hit.collider != null)
+            return true;
+        return false;
+    }
+    #endregion
 }

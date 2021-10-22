@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
         var idle = new PlayerIdleState<PlayerStates>(_player, PlayerStates.Run,PlayerStates.Fall,PlayerStates.Attack,PlayerStates.Jump,_playerInput );
         var run = new PlayerRunState<PlayerStates>(_player, PlayerStates.Idle, PlayerStates.Jump,PlayerStates.Fall,_playerInput);
         var jump = new PlayerJumpState<PlayerStates>(PlayerStates.Fall, PlayerStates.Idle,_player);
-        var fall = new PlayerFallState<PlayerStates>(PlayerStates.Land, _player);
+        var fall = new PlayerFallState<PlayerStates>(PlayerStates.Land,_playerInput, _player);
         var land = new PlayerLandState<PlayerStates>(PlayerStates.Idle, _player);
         
         

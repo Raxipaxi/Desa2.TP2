@@ -22,10 +22,16 @@ public class PlayerIdleState<T> : State<T>
 
     public override void Execute()
     {
-        _player.Idle();
-        _playerInput.UpdateInputs();
-        if (!_player.IsJumping()&&!_player.IsFalling())
+        if (_player.CheckIfGrounded())
         {
+            _player.Idle();
+        }
+    
+        _playerInput.UpdateInputs(); 
+
+        if (!_player.IsJumping()&&_player.CheckIfGrounded())
+        {
+            
             if (_playerInput.IsRunning())
             {
                 _fsm.Transition(_runInput);
