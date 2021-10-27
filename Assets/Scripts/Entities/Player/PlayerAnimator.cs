@@ -40,6 +40,18 @@ public class PlayerAnimator : MonoBehaviour
         _playerAnimator.SetBool(PlayerAnimParameters.OnAir,false);
         _playerAnimator.SetBool(PlayerAnimParameters.IsTouchingGround,true);
     }
-    
+
+    public void Attack(float vel)
+    {
+        if (vel>0)
+        {
+            _playerAnimator.Play("AttackIdle");
+        }
+        else
+        {
+            _playerAnimator.Play("AttackMoving");
+        }
+        
+    }
 
 }

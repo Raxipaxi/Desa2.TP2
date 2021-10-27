@@ -55,6 +55,12 @@ public class Player : Actor
         }
     }
 
+    public override void Attack(int dmg)
+    {
+
+        _animator.Attack(_rb.velocity.x);
+    }
+
     public float GetSpeed()
     {
         return _speed;

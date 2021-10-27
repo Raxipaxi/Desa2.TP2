@@ -18,5 +18,6 @@ public static class PlayerAnimParameters
     public const string IsRunning = "IsRunning";
     public const string IsTouchingGround = "IsTouchingGround";
     public const string ChangeDir = "ChangeDir";
-    
+    public const string IsAttacking = "IsAttacking";
+
 }

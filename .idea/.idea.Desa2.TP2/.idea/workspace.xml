@@ -2,26 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc10c66-34c3-430c-98ea-df313a8ee755" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PLayerAttackState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_AttackWhitMove.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_AttackWhitMove.anim.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerFallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerFallState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerIdleState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerRunState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerRunState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerAnimator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/bgrd_tree5.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/castle_env.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/castle_env.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/env_mon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/env_mon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/env_trees.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/env_trees.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/main_background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/main_background.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/top_far_bgrnd.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/top_far_bgrnd.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/wood_env.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/wood_env.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_AttackNoMovement.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Attacks/_AttackNoMovement.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tile Palettes/Swamp surface.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Swamp surface.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +94,7 @@
       <workItem from="1634737974212" duration="7479000" />
       <workItem from="1634760762409" duration="13381000" />
       <workItem from="1634822658884" duration="17723000" />
+      <workItem from="1635342812363" duration="7522000" />
     </task>
     <servers />
   </component>
