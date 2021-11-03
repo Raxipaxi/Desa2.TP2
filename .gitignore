@@ -9,9 +9,9 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
-/[Aa]ssets/[Hh]ierarchy 2/
-/[Aa]ssets/[Hh]ierarchy 2/**.meta
-/[Aa]ssets/Hierarchy*
+/[Aa]ssets/z[Hh]ierarchy 2/
+/[Aa]ssets/z[Hh]ierarchy 2/**.meta
+/[Aa]ssets/zHierarchy.meta
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta

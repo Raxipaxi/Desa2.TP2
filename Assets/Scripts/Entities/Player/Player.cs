@@ -73,6 +73,7 @@ public class Player : Actor
     private void Flip() 
     {
         _transform.Rotate(0f, 180f, 0f);
+       // _transform.LookAt(Vector3.forward); -- Chequear 
         isFacingRight = !isFacingRight;
     }
 

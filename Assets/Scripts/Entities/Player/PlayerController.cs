@@ -3,7 +3,7 @@
 public class PlayerController : MonoBehaviour
 {
 
-    private FSM<PlayerStates> _fsm;
+    private FSM<PlayerStatesEnum> _fsm;
     private Player _player;
     private iInput _playerInput;
     
@@ -18,44 +18,44 @@ public class PlayerController : MonoBehaviour
     {
         
         //--------------- FSM Creation -------------------//                
-        var idle = new PlayerIdleState<PlayerStates>(_player, PlayerStates.Run,PlayerStates.Fall,PlayerStates.Attack,PlayerStates.Jump,_playerInput );
-        var run = new PlayerRunState<PlayerStates>(_player, PlayerStates.Idle, PlayerStates.Jump,PlayerStates.Fall,PlayerStates.Attack,_playerInput);
-        var jump = new PlayerJumpState<PlayerStates>(PlayerStates.Fall, PlayerStates.Idle,_player);
-        var fall = new PlayerFallState<PlayerStates>(PlayerStates.Land,_playerInput, _player);
-        var land = new PlayerLandState<PlayerStates>(PlayerStates.Idle, _player);
-        var attack = new PlayerAttackState<PlayerStates>(PlayerStates.Idle,PlayerStates.Run,_player,_playerInput);
+        var idle = new PlayerIdleState<PlayerStatesEnum>(_player, PlayerStatesEnum.Run,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,PlayerStatesEnum.Jump,_playerInput );
+        var run = new PlayerRunState<PlayerStatesEnum>(_player, PlayerStatesEnum.Idle, PlayerStatesEnum.Jump,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,_playerInput);
+        var jump = new PlayerJumpState<PlayerStatesEnum>(PlayerStatesEnum.Fall, PlayerStatesEnum.Idle,_player);
+        var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,_playerInput, _player);
+        var land = new PlayerLandState<PlayerStatesEnum>(PlayerStatesEnum.Idle, _player);
+        var attack = new PlayerAttackState<PlayerStatesEnum>(PlayerStatesEnum.Idle,PlayerStatesEnum.Run,_player,_playerInput);
         
         
         // Idle State
-        idle.AddTransition(PlayerStates.Run, run);
-        idle.AddTransition(PlayerStates.Jump,jump);
-        idle.AddTransition(PlayerStates.Fall,fall);
-        idle.AddTransition(PlayerStates.Attack, attack);
+        idle.AddTransition(PlayerStatesEnum.Run, run);
+        idle.AddTransition(PlayerStatesEnum.Jump,jump);
+        idle.AddTransition(PlayerStatesEnum.Fall,fall);
+        idle.AddTransition(PlayerStatesEnum.Attack, attack);
         
         // Run State
-        run.AddTransition(PlayerStates.Idle, idle);
-        run.AddTransition(PlayerStates.Fall,fall);
-        run.AddTransition(PlayerStates.Jump,jump);
-        run.AddTransition(PlayerStates.Attack,attack);
+        run.AddTransition(PlayerStatesEnum.Idle, idle);
+        run.AddTransition(PlayerStatesEnum.Fall,fall);
+        run.AddTransition(PlayerStatesEnum.Jump,jump);
+        run.AddTransition(PlayerStatesEnum.Attack,attack);
         
         // Jump State
-       jump.AddTransition(PlayerStates.Fall,fall);
-       jump.AddTransition(PlayerStates.Idle,idle);
+       jump.AddTransition(PlayerStatesEnum.Fall,fall);
+       jump.AddTransition(PlayerStatesEnum.Idle,idle);
         
         // Fall State
-        fall.AddTransition(PlayerStates.Land,land);
+        fall.AddTransition(PlayerStatesEnum.Land,land);
         
         // Land State
-        land.AddTransition(PlayerStates.Idle,idle);
+        land.AddTransition(PlayerStatesEnum.Idle,idle);
       
         // Attack State
-        attack.AddTransition(PlayerStates.Idle,idle);
-        attack.AddTransition(PlayerStates.Run,run);
+        attack.AddTransition(PlayerStatesEnum.Idle,idle);
+        attack.AddTransition(PlayerStatesEnum.Run,run);
         
         
         
 
-        _fsm = new FSM<PlayerStates>();
+        _fsm = new FSM<PlayerStatesEnum>();
         // Set init state
         _fsm.SetInit(idle);
 
