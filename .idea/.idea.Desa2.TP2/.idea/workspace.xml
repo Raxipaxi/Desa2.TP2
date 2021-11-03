@@ -2,11 +2,301 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc10c66-34c3-430c-98ea-df313a8ee755" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/DemonAxe.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAxe.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAxe.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/DemonAxe/Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/DemonAxe/Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Scenario.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Scenario/Grid.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Scenario/Grid.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack1_6.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Attack/attack2_6.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Idle/ready_6.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/Stand up/stand_up_5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead/dead_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead/dead_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead/dead_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead/dead_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead/dead_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead/dead_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead/dead_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead/dead_4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit/hit_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit/hit_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit/hit_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit/hit_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit/hit_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit/hit_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump/jump_5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run/run_6.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_4.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_5.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk/walk_6.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/Background.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/Background.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_10.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_10.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_11.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_11.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_12.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_12.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_13.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_13.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_14.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_14.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_15.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_15.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_16.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_16.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_17.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_17.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_18.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_18.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_19.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_19.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_20.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_20.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_21.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_21.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_22.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_22.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_23.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_23.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_24.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_24.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_25.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_25.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_26.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_26.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_27.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_27.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_28.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_28.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_29.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_29.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_3.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_3.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_30.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_30.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_31.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_31.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_32.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_32.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_33.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_33.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_34.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_34.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_35.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_35.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_36.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_36.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_37.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_37.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_38.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_38.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_4.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_4.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_5.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_5.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_6.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_6.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_7.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_7.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_8.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_8.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_9.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_9.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Tile Palettes/New folder.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Sandbox.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Sandbox.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/top_far_bgrnd.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/DarkForest1.2/top_far_bgrnd.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack1_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/attack2_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/dead_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/hit_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/jump_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/ready_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/run_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/stand_up_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/demon_axe_red/walk_6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tile Palettes/Background.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tile Palettes/Background.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tile Palettes/Background.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_0.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Background/top_far_bgrnd_0.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +375,7 @@
       <workItem from="1634822658884" duration="17723000" />
       <workItem from="1635342812363" duration="7522000" />
       <workItem from="1635721288771" duration="1787000" />
+      <workItem from="1635978562389" duration="433000" />
     </task>
     <servers />
   </component>
@@ -96,7 +387,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

@@ -1,7 +1,124 @@
 fileFormatVersion: 2
 guid: 52cf125402ff6ee47bbc1564057667d4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2058900458461974204
+    second: top_far_bgrnd_17
+  - first:
+      213: -4671023715348445486
+    second: top_far_bgrnd_18
+  - first:
+      213: -2628438497468609832
+    second: top_far_bgrnd_19
+  - first:
+      213: -4219134444641109766
+    second: top_far_bgrnd_0
+  - first:
+      213: 205935511540882859
+    second: top_far_bgrnd_1
+  - first:
+      213: -9060194621009612625
+    second: top_far_bgrnd_2
+  - first:
+      213: 1059145417291778130
+    second: top_far_bgrnd_3
+  - first:
+      213: -6465862322680240322
+    second: top_far_bgrnd_4
+  - first:
+      213: -3432996983011041322
+    second: top_far_bgrnd_5
+  - first:
+      213: -2854476001591673416
+    second: top_far_bgrnd_6
+  - first:
+      213: -4207758879949944457
+    second: top_far_bgrnd_7
+  - first:
+      213: -8275856428696930068
+    second: top_far_bgrnd_8
+  - first:
+      213: 8087404319364921757
+    second: top_far_bgrnd_9
+  - first:
+      213: 2570461829416463968
+    second: top_far_bgrnd_10
+  - first:
+      213: 4524187652852611590
+    second: top_far_bgrnd_11
+  - first:
+      213: -8822852501580362321
+    second: top_far_bgrnd_12
+  - first:
+      213: 4367753676916548321
+    second: top_far_bgrnd_13
+  - first:
+      213: -3852186176301154771
+    second: top_far_bgrnd_14
+  - first:
+      213: -6032273635458271609
+    second: top_far_bgrnd_15
+  - first:
+      213: 124490051336152523
+    second: top_far_bgrnd_16
+  - first:
+      213: -1892903526148099767
+    second: top_far_bgrnd_20
+  - first:
+      213: 9174627449619117516
+    second: top_far_bgrnd_21
+  - first:
+      213: 2357925768236427912
+    second: top_far_bgrnd_22
+  - first:
+      213: -4670354921151043425
+    second: top_far_bgrnd_23
+  - first:
+      213: -7568491288407996964
+    second: top_far_bgrnd_24
+  - first:
+      213: 2025738066051852536
+    second: top_far_bgrnd_25
+  - first:
+      213: -8613252962887750089
+    second: top_far_bgrnd_26
+  - first:
+      213: 157614497707831767
+    second: top_far_bgrnd_27
+  - first:
+      213: -126115063345916359
+    second: top_far_bgrnd_28
+  - first:
+      213: 7256347733922951290
+    second: top_far_bgrnd_29
+  - first:
+      213: -1876482865312234535
+    second: top_far_bgrnd_30
+  - first:
+      213: 4240822733461071654
+    second: top_far_bgrnd_31
+  - first:
+      213: -5225641987685477781
+    second: top_far_bgrnd_32
+  - first:
+      213: -4771154427451717399
+    second: top_far_bgrnd_33
+  - first:
+      213: 4734113638332272022
+    second: top_far_bgrnd_34
+  - first:
+      213: -2510190975328784320
+    second: top_far_bgrnd_35
+  - first:
+      213: 3993381386711799281
+    second: top_far_bgrnd_36
+  - first:
+      213: 5664498465758658282
+    second: top_far_bgrnd_37
+  - first:
+      213: 7200675447716852973
+    second: top_far_bgrnd_38
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -224,9 +341,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 453
-        width: 225
-        height: 62
+        y: 357
+        width: 624
+        height: 158
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -727,10 +844,10 @@ TextureImporter:
       name: top_far_bgrnd_23
       rect:
         serializedVersion: 2
-        x: 248
+        x: 304
         y: 357
-        width: 80
-        height: 31
+        width: 4
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -748,9 +865,9 @@ TextureImporter:
       name: top_far_bgrnd_22
       rect:
         serializedVersion: 2
-        x: 158
+        x: 180
         y: 368
-        width: 84
+        width: 4
         height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -769,10 +886,10 @@ TextureImporter:
       name: top_far_bgrnd_14
       rect:
         serializedVersion: 2
-        x: 224
-        y: 399
-        width: 68
-        height: 32
+        x: 256
+        y: 400
+        width: 5
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -790,10 +907,10 @@ TextureImporter:
       name: top_far_bgrnd_10
       rect:
         serializedVersion: 2
-        x: 311
-        y: 407
-        width: 66
-        height: 30
+        x: 313
+        y: 410
+        width: 8
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -811,10 +928,10 @@ TextureImporter:
       name: top_far_bgrnd_11
       rect:
         serializedVersion: 2
-        x: 400
-        y: 397
-        width: 48
-        height: 22
+        x: 322
+        y: 407
+        width: 7
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -832,10 +949,10 @@ TextureImporter:
       name: top_far_bgrnd_15
       rect:
         serializedVersion: 2
-        x: 226
-        y: 429
-        width: 402
-        height: 80
+        x: 272
+        y: 400
+        width: 7
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -853,10 +970,10 @@ TextureImporter:
       name: top_far_bgrnd_16
       rect:
         serializedVersion: 2
-        x: 128
-        y: 430
-        width: 31
-        height: 19
+        x: 280
+        y: 403
+        width: 8
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -866,6 +983,69 @@ TextureImporter:
       bones: []
       spriteID: bc526f7ca074ab100800000000000000
       internalID: 124490051336152523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top_far_bgrnd_17
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 400
+        width: 5
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4413c7901f05d63e0800000000000000
+      internalID: -2058900458461974204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top_far_bgrnd_18
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 407
+        width: 5
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d60b35dda03d2fb0800000000000000
+      internalID: -4671023715348445486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: top_far_bgrnd_19
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 407
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da0c64dc19e58bd0800000000000000
+      internalID: -2628438497468609832
       vertices: []
       indices: 
       edges: []

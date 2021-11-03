@@ -10,6 +10,18 @@
     Heal,
     Damage
 }
+public enum EnemyStatesEnum 
+{
+    Idle,
+    Run,
+    Attack,
+    Jump,
+    Fall,
+    Land,
+    Dead,
+    Heal,
+    Damage
+}
 
 public static class PlayerAnimParameters
 {
