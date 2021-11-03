@@ -3,14 +3,14 @@
 
 public class PlayerAttackState<T> : State<T>
 {
-    private Player _player;
+    private PlayerModel _playerModel;
     private T _inputIdle;
     private T _inputMove;
     private iInput _playerInput;
 
-    public PlayerAttackState(T inputIdle, T inputMove, Player player, iInput playerInput)
+    public PlayerAttackState(T inputIdle, T inputMove, PlayerModel playerModel, iInput playerInput)
     {
-        _player = player;
+        _playerModel = playerModel;
         _inputIdle = inputIdle;
         _inputMove = inputMove;
         _playerInput = playerInput;
@@ -18,7 +18,7 @@ public class PlayerAttackState<T> : State<T>
 
     public override void Execute()
     {
-        _player.Attack(5);
+        _playerModel.Attack(5);
         _playerInput.UpdateInputs();
         if (_playerInput.IsRunning())
         {

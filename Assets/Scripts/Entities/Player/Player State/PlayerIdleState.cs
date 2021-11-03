@@ -7,11 +7,11 @@ public class PlayerIdleState<T> : State<T>
     private T _jumpInput;
     private T _fallInput;
     private iInput _playerInput;
-    private Player _player;
+    private PlayerModel _playerModel;
 
-    public PlayerIdleState(Player player, T runInput,T fallInput,T attackInput,T jumpInput,iInput playerInput)
+    public PlayerIdleState(PlayerModel playerModel, T runInput,T fallInput,T attackInput,T jumpInput,iInput playerInput)
     {
-        _player = player;
+        _playerModel = playerModel;
         _runInput = runInput;
         _attackInput = attackInput;
         _fallInput = fallInput;
@@ -22,14 +22,14 @@ public class PlayerIdleState<T> : State<T>
 
     public override void Execute()
     {
-        if (_player.CheckIfGrounded())
+        if (_playerModel.CheckIfGrounded())
         {
-            _player.Idle();
+            _playerModel.Idle();
         }
     
         _playerInput.UpdateInputs(); 
 
-        if (!_player.IsJumping()&&_player.CheckIfGrounded())
+        if (!_playerModel.IsJumping()&&_playerModel.CheckIfGrounded())
         {
             
             if (_playerInput.IsRunning())

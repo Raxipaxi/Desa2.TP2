@@ -1,16 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemonAxeController : MonoBehaviour
+public class DAxeController : MonoBehaviour
 {
 
-    private DemonAxeModel _demon;
+    private DAxeModel _d;
 
     private FSM<EnemyStatesEnum> _fsm;
     
     // Start is called before the first frame update
+    private void Awake()
+    {
+        BakeReferences();
+    }
+
+    void BakeReferences()
+    {
+        _d = GetComponent<DAxeModel>();
+        
+    }
+
     void Start()
+    {
+        InitFSM();
+    }
+
+    void InitFSM()
     {
         
     }

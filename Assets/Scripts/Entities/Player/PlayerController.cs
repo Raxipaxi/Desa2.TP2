@@ -4,12 +4,12 @@ public class PlayerController : MonoBehaviour
 {
 
     private FSM<PlayerStatesEnum> _fsm;
-    private Player _player;
+    private PlayerModel _playerModel;
     private iInput _playerInput;
     
     private void Awake()
     {
-        _player = GetComponent<Player>();
+        _playerModel = GetComponent<PlayerModel>();
         _playerInput = GetComponent<iInput>();
         
         FsmInit();
@@ -18,12 +18,12 @@ public class PlayerController : MonoBehaviour
     {
         
         //--------------- FSM Creation -------------------//                
-        var idle = new PlayerIdleState<PlayerStatesEnum>(_player, PlayerStatesEnum.Run,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,PlayerStatesEnum.Jump,_playerInput );
-        var run = new PlayerRunState<PlayerStatesEnum>(_player, PlayerStatesEnum.Idle, PlayerStatesEnum.Jump,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,_playerInput);
-        var jump = new PlayerJumpState<PlayerStatesEnum>(PlayerStatesEnum.Fall, PlayerStatesEnum.Idle,_player);
-        var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,_playerInput, _player);
-        var land = new PlayerLandState<PlayerStatesEnum>(PlayerStatesEnum.Idle, _player);
-        var attack = new PlayerAttackState<PlayerStatesEnum>(PlayerStatesEnum.Idle,PlayerStatesEnum.Run,_player,_playerInput);
+        var idle = new PlayerIdleState<PlayerStatesEnum>(_playerModel, PlayerStatesEnum.Run,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,PlayerStatesEnum.Jump,_playerInput );
+        var run = new PlayerRunState<PlayerStatesEnum>(_playerModel, PlayerStatesEnum.Idle, PlayerStatesEnum.Jump,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,_playerInput);
+        var jump = new PlayerJumpState<PlayerStatesEnum>(PlayerStatesEnum.Fall, PlayerStatesEnum.Idle,_playerModel);
+        var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,_playerInput, _playerModel);
+        var land = new PlayerLandState<PlayerStatesEnum>(PlayerStatesEnum.Idle, _playerModel);
+        var attack = new PlayerAttackState<PlayerStatesEnum>(PlayerStatesEnum.Idle,PlayerStatesEnum.Run,_playerModel,_playerInput);
         
         
         // Idle State
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
-        if (_player != null)
+        if (_playerModel != null)
         {
             _fsm.OnUpdate();
             

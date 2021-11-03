@@ -3,17 +3,17 @@
 public class PlayerLandState<T> : State<T>
 {
     private T _inputIdle;
-    private Player _player;
+    private PlayerModel _playerModel;
 
-    public PlayerLandState(T inputIdle, Player player)
+    public PlayerLandState(T inputIdle, PlayerModel playerModel)
     {
         _inputIdle = inputIdle;
-        _player = player;
+        _playerModel = playerModel;
     }
 
     public override void Execute()
     {
-        _player.Land();
+        _playerModel.Land();
         _fsm.Transition(_inputIdle);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class Player : Actor
+public class PlayerModel : Actor
 {
     #region Position/Physics
 
@@ -13,7 +13,7 @@ public class Player : Actor
     [SerializeField] private float _jump;
     [SerializeField] private float groundDistance = 0.2f;
     [SerializeField] private LayerMask groundDetectionList;
-    private PlayerAnimator _animator;
+    private PlayerView _view;
     
     private bool isFacingRight;//Checks where is facing
     private bool isJumping;//Checks if it already jumping
@@ -24,7 +24,7 @@ public class Player : Actor
     {
         _transform = GetComponent<Transform>();
         _rb = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<PlayerAnimator>();
+        _view = GetComponent<PlayerView>();
         isFacingRight = true;
         isJumping = false;
     }
@@ -33,7 +33,7 @@ public class Player : Actor
     {
         _rb.velocity=new Vector2(0f,VelY);
         isJumping = false;
-        _animator.IdleAnimation();
+        _view.IdleAnimation();
     }
     public override void Move(Vector2 dir,float speed)
     {
@@ -51,14 +51,14 @@ public class Player : Actor
 
         if (!IsJumping()&&CheckIfGrounded())
         {
-           _animator.RunAnimation(currDir.normalized.x);
+           _view.RunAnimation(currDir.normalized.x);
         }
     }
 
     public override void Attack(int dmg)
     {
 
-        _animator.Attack(_rb.velocity.x);
+        _view.Attack(_rb.velocity.x);
     }
 
     public float GetSpeed()
@@ -87,15 +87,15 @@ public class Player : Actor
             var jumpForce = _jump * transform.up;
             _rb.AddForce(jumpForce, ForceMode2D.Impulse);
         }
-        _animator.JumpAnimation();
+        _view.JumpAnimation();
     }
     public void Fall()
     {
-        _animator.FallAnimation();
+        _view.FallAnimation();
     }
     public void Land()
     {
-        _animator.LandAnimation();
+        _view.LandAnimation();
     }
     public bool IsJumping()
     {

@@ -5,20 +5,20 @@ public class PlayerJumpState<T> : State<T>
 {
     private T _fallInput;
     private T _idleInput;
-    private Player _player;
+    private PlayerModel _playerModel;
 
-    public PlayerJumpState(T fallInmput,T idleInput, Player player)
+    public PlayerJumpState(T fallInmput,T idleInput, PlayerModel playerModel)
     {
         _fallInput = fallInmput;
         _idleInput = idleInput;
-        _player = player;
+        _playerModel = playerModel;
     }
 
     public override void Execute()
     {
-        if (!_player.IsJumping())
+        if (!_playerModel.IsJumping())
         {
-            _player.Jump();
+            _playerModel.Jump();
     
                 _fsm.Transition(_fallInput);
        

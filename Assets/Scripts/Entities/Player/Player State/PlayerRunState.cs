@@ -7,12 +7,12 @@ public class PlayerRunState<T> : State<T>
     private T _inputFall;
     private T _inputAttack;
     private iInput _playerInput;
-    private Player _player;
+    private PlayerModel _playerModel;
 
 
-    public PlayerRunState(Player player, T inputIdle, T inputJump,T inputFall ,T inputAttack,iInput playerInput)
+    public PlayerRunState(PlayerModel playerModel, T inputIdle, T inputJump,T inputFall ,T inputAttack,iInput playerInput)
     {
-        _player = player;
+        _playerModel = playerModel;
         _inputIdle = inputIdle;
         _inputJump = inputJump;
         _inputFall = inputFall;
@@ -26,10 +26,10 @@ public class PlayerRunState<T> : State<T>
         
         if (_playerInput.IsRunning())
         {
-            if (_player.CheckIfGrounded())
+            if (_playerModel.CheckIfGrounded())
             {
                 Vector2 dir = new Vector2(h,0);
-                _player.Move(dir, _player.GetSpeed());
+                _playerModel.Move(dir, _playerModel.GetSpeed());
             }
            else 
            {
@@ -37,7 +37,7 @@ public class PlayerRunState<T> : State<T>
            }
         }
 
-        if (_playerInput.IsJumping()&&!_player.IsJumping())
+        if (_playerInput.IsJumping()&&!_playerModel.IsJumping())
         {
             _fsm.Transition(_inputJump);
         }

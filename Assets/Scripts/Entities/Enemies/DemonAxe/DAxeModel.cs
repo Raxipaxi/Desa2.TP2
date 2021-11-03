@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DemonAxeModel : MonoBehaviour, IEnemy,IDamageable
+public class DAxeModel : MonoBehaviour, IEnemy,IDamageable
 {
     public int CurrentLife { get; }
     public int MaxLife { get; }
