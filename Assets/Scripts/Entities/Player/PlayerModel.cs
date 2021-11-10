@@ -8,25 +8,37 @@ public class PlayerModel : Actor
     private Transform _transform;
     private Rigidbody2D _rb;
     private float VelY => _rb.velocity.y;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _speedFallPen;
-    [SerializeField] private float _jump;
-    [SerializeField] private float groundDistance = 0.2f;
-    [SerializeField] private LayerMask groundDetectionList;
     private PlayerView _view;
+    private PlayerController _controller;
+    public PlayerData _playerData;
+    
     
     private bool isFacingRight;//Checks where is facing
     private bool isJumping;//Checks if it already jumping
     
     #endregion
+    
 
     private void Awake()
     {
         _transform = GetComponent<Transform>();
         _rb = GetComponent<Rigidbody2D>();
         _view = GetComponent<PlayerView>();
+        _controller = GetComponent<PlayerController>();
         isFacingRight = true;
         isJumping = false;
+        SubscribeEvents();
+    }
+
+    void SubscribeEvents()
+    {
+        _controller.OnAttack += Attack;
+        _controller.OnMove += Move;
+    }
+
+    private void Attack()
+    {
+        throw new NotImplementedException();
     }
 
     public override void Idle()
@@ -35,9 +47,18 @@ public class PlayerModel : Actor
         isJumping = false;
         _view.IdleAnimation();
     }
-    public override void Move(Vector2 dir,float speed)
+
+    public override void Move(Vector2 dir)
     {
-        var currDir = new Vector2(dir.x * speed,VelY);
+        bool isOnGround = !IsJumping() && CheckIfGrounded();
+        var finalSpeed = _playerData.walkSpeed;
+        
+        if (!isOnGround) finalSpeed -= _playerData.speedFallPenalty;
+        
+        
+        var currDir = new Vector2(dir.x * finalSpeed,VelY);
+       
+        
         _rb.velocity = currDir;
         
         if (isFacingRight && dir.x<0)
@@ -49,25 +70,26 @@ public class PlayerModel : Actor
             Flip();
         }
 
-        if (!IsJumping()&&CheckIfGrounded())
+        if (isOnGround)
         {
            _view.RunAnimation(currDir.normalized.x);
         }
     }
 
-    public override void Attack(int dmg)
+    public override void Attack(int dmgModifier)
     {
-
-        _view.Attack(_rb.velocity.x);
+        var moving = _rb.velocity.x;
+        
+        _view.Attack(moving);
     }
 
     public float GetSpeed()
     {
-        return _speed;
+        return _playerData.walkSpeed;
     }    
     public float GetFallSpeed()
     {
-        return _speed-_speedFallPen;
+        return _playerData.walkSpeed-_playerData.speedFallPenalty;
     }
     
     private void Flip() 
@@ -84,7 +106,7 @@ public class PlayerModel : Actor
         if (CheckIfGrounded())
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 0f);
-            var jumpForce = _jump * transform.up;
+            var jumpForce = _playerData.jumpHeight * transform.up;
             _rb.AddForce(jumpForce, ForceMode2D.Impulse);
         }
         _view.JumpAnimation();
@@ -103,8 +125,8 @@ public class PlayerModel : Actor
     }
     public bool CheckIfGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundDistance, groundDetectionList);
-        Debug.DrawRay(_transform.position, Vector2.down*groundDistance, Color.cyan);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, _playerData.groundDistance, _playerData.groundDetectionList);
+        Debug.DrawRay(_transform.position, Vector2.down*_playerData.groundDistance, Color.cyan);
         if(hit.collider != null)
             return true;
         return false;

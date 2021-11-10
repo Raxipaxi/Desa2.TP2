@@ -8,7 +8,7 @@ public class DAxeModel : MonoBehaviour, IEnemy,IDamageable
     public int MaxLife { get; }
     
 
-    public void Patrol()
+    public void Move()
     {
         throw new System.NotImplementedException();
     }
@@ -18,6 +18,7 @@ public class DAxeModel : MonoBehaviour, IEnemy,IDamageable
         throw new System.NotImplementedException();
     }
 
+    
     public void TakeDamage(int x)
     {
         throw new System.NotImplementedException();

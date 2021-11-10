@@ -1,12 +1,6 @@
-﻿using UnityEngine;
-
-
-public class DAxeRunState<T> : State<T>
+﻿
+public class DAxePatrolState<T> : State<T>
 {
-    public DAxeRunState()
-    {
-    }
-
     public override void Awake()
     {
         base.Awake();

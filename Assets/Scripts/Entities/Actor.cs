@@ -55,7 +55,7 @@ public class Actor : MonoBehaviour, IDamageable, iMobile
         throw new NotImplementedException();
     }
 
-    public virtual void Move(Vector2 dir, float speed)
+    public virtual void Move(Vector2 dir)
     {
         throw new NotImplementedException();
     }

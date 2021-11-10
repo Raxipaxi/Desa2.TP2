@@ -3,7 +3,7 @@
 public interface IEnemy
 {
 
-    void Patrol();
+    void Move();
     void Chase();
     
 

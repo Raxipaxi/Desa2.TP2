@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -6,6 +7,14 @@ public class PlayerController : MonoBehaviour
     private FSM<PlayerStatesEnum> _fsm;
     private PlayerModel _playerModel;
     private iInput _playerInput;
+
+    #region Actions
+    public event Action OnAttack;
+    public event Action<Vector2> OnMove;
+    
+
+    #endregion
+    
     
     private void Awake()
     {
@@ -14,6 +23,8 @@ public class PlayerController : MonoBehaviour
         
         FsmInit();
     }
+    
+    
     private void FsmInit()
     {
         
@@ -60,6 +71,19 @@ public class PlayerController : MonoBehaviour
         _fsm.SetInit(idle);
 
     }
+
+    #region Commands
+
+    public void AttackCommand()
+    {
+        OnAttack?.Invoke();
+    }
+    public void MoveCommand(Vector2 dir)
+    {
+        OnMove?.Invoke(dir);
+    }
+
+    #endregion
     private void Update()
     {
         if (_playerModel != null)

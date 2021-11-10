@@ -20,7 +20,7 @@ public class PlayerFallState<T> : State<T>
         _playerInput.UpdateInputs();
         var h = _playerInput.GetH;
         Vector2 dir = new Vector2(h,0f);
-        _playerModel.Move(dir, _playerModel.GetFallSpeed());
+        _playerModel.Move(dir);
         
         if (_playerModel.CheckIfGrounded())
         {

@@ -29,7 +29,7 @@ public class PlayerRunState<T> : State<T>
             if (_playerModel.CheckIfGrounded())
             {
                 Vector2 dir = new Vector2(h,0);
-                _playerModel.Move(dir, _playerModel.GetSpeed());
+                _playerModel.Move(dir);
             }
            else 
            {
