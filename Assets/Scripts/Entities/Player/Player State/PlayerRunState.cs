@@ -1,4 +1,5 @@
-﻿using  UnityEngine;
+﻿using System;
+using  UnityEngine;
 
 public class PlayerRunState<T> : State<T>
 {
@@ -7,17 +8,21 @@ public class PlayerRunState<T> : State<T>
     private T _inputFall;
     private T _inputAttack;
     private iInput _playerInput;
-    private PlayerModel _playerModel;
+    private Func<bool> _checkGround;
+    private Func<bool> _checkJump;
+    private Action<Vector2> _onMove;
 
 
-    public PlayerRunState(PlayerModel playerModel, T inputIdle, T inputJump,T inputFall ,T inputAttack,iInput playerInput)
+    public PlayerRunState(Func<bool> checkGround,Func<bool> checkJump, T inputIdle, T inputJump,T inputFall ,T inputAttack,iInput playerInput, Action<Vector2> onMove)
     {
-        _playerModel = playerModel;
         _inputIdle = inputIdle;
         _inputJump = inputJump;
         _inputFall = inputFall;
         _playerInput = playerInput;
         _inputAttack = inputAttack;
+        _checkGround = checkGround;
+        _checkJump = checkJump;
+        _onMove = onMove;
     }
     public override void Execute()
     {
@@ -26,10 +31,10 @@ public class PlayerRunState<T> : State<T>
         
         if (_playerInput.IsRunning())
         {
-            if (_playerModel.CheckIfGrounded())
+            if (_checkGround())
             {
                 Vector2 dir = new Vector2(h,0);
-                _playerModel.Move(dir);
+                _onMove?.Invoke(dir);
             }
            else 
            {
@@ -37,7 +42,7 @@ public class PlayerRunState<T> : State<T>
            }
         }
 
-        if (_playerInput.IsJumping()&&!_playerModel.IsJumping())
+        if (_playerInput.IsJumping()&&!_checkJump())
         {
             _fsm.Transition(_inputJump);
         }

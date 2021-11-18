@@ -1,31 +1,52 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DAxeModel : MonoBehaviour, IEnemy,IDamageable
+
+public class DAxeModel : Actor
 {
-    public int CurrentLife { get; }
-    public int MaxLife { get; }
+    [SerializeField] private EnemyData data;
+    private Rigidbody _rb;
+    private DAxeView _dAxeView;
+    private int _currLife;
+    private int _currDmg;
+    private int CurrLife => _currLife;
+    
     
 
-    public void Move()
+    private DAxeController _controller;
+    private DAxeView _view;
+    private bool isFacingRight;//Checks where is facing
+
+    private void Awake()
     {
-        throw new System.NotImplementedException();
+        BakeReferences();
+        isFacingRight = true;
+        _currLife = data.maxLife;
+        _currLife = data.maxLife;
+        _currDmg = data.damage;
+        isFacingRight = true;
     }
 
-    public void Chase()
+    public void BakeReferences()
     {
-        throw new System.NotImplementedException();
+        _rb = GetComponent<Rigidbody>();
     }
 
-    
-    public void TakeDamage(int x)
+    public override void TakeDamage(int damage)
     {
-        throw new System.NotImplementedException();
+        _currLife -= damage;
+        
     }
 
-    public void Die()
+    public override void Die()
     {
-        throw new System.NotImplementedException();
+        base.Die();
+    }
+
+    public override void Move(Vector2 dir)
+    {
+        base.Move(dir);
     }
 }

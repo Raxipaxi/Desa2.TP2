@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flee : MonoBehaviour, ISteering
+public class Seek : ISteering2D
 {
-    Transform _self;
-    Transform _target;
-    public Flee(Transform self, Transform target)
+    private Transform _self;
+    private Transform _target;
+
+    public Seek(Transform self, Transform target)
     {
         _self = self;
         _target = target;
     }
     public Vector2 GetDir()
     {
-        //A: Self
+        //A : Self
         //B: Target
-        //A-B:  Self - Target 
 
-        Vector2 dir = _self.position - _target.position;
-        dir = dir.normalized;
-        return dir;
+        return (_target.position - _self.position).normalized;
     }
+
     public Transform SetSelf
     {
         set
@@ -28,6 +27,7 @@ public class Flee : MonoBehaviour, ISteering
             _self = value;
         }
     }
+
     public Transform SetTarget
     {
         set
@@ -35,4 +35,5 @@ public class Flee : MonoBehaviour, ISteering
             _target = value;
         }
     }
+
 }

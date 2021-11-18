@@ -1,25 +1,29 @@
-﻿using UnityEngine;
+﻿using System;
+
 
 
 public class PlayerAttackState<T> : State<T>
 {
-    private PlayerModel _playerModel;
+    private int _dmg;
     private T _inputIdle;
     private T _inputMove;
     private iInput _playerInput;
+    private Action<int> _onAttack;
 
-    public PlayerAttackState(T inputIdle, T inputMove, PlayerModel playerModel, iInput playerInput)
+    public PlayerAttackState(T inputIdle, T inputMove, Action<int> onAttack,int dmg, iInput playerInput)
     {
-        _playerModel = playerModel;
+        _onAttack = onAttack;
         _inputIdle = inputIdle;
         _inputMove = inputMove;
+        _dmg = dmg;
         _playerInput = playerInput;
     }
 
     public override void Execute()
     {
-        _playerModel.Attack(5);
+        _onAttack?.Invoke(_dmg);
         _playerInput.UpdateInputs();
+        
         if (_playerInput.IsRunning())
         {
             _fsm.Transition(_inputMove);

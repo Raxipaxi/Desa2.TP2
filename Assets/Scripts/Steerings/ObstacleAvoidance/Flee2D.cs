@@ -2,24 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seek : ISteering
+public class Flee2D : ISteering2D
 {
-    Transform _self;
-    Transform _target;
-    public Seek(Transform self, Transform target)
+    private Transform _self;
+    private Transform _target;
+
+    public Flee2D(Transform self, Transform target)
     {
         _self = self;
         _target = target;
-    }
-    public Vector2 GetDir()
-    {
-        //A: Self
-        //B: Target
-        //B-A: Target - Self
-
-        Vector2 dir = _target.position - _self.position;
-        dir = dir.normalized;
-        return dir;
     }
     public Transform SetSelf
     {
@@ -28,6 +19,7 @@ public class Seek : ISteering
             _self = value;
         }
     }
+
     public Transform SetTarget
     {
         set
@@ -35,4 +27,12 @@ public class Seek : ISteering
             _target = value;
         }
     }
+    public Vector2 GetDir()
+    {
+        //A : Target
+        //B: Self
+
+        return (_self.position - _target.position).normalized;
+    }
+
 }

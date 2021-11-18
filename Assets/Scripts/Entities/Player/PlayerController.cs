@@ -9,17 +9,21 @@ public class PlayerController : MonoBehaviour
     private iInput _playerInput;
 
     #region Actions
-    public event Action OnAttack;
+    public event Action<int> OnAttack;
     public event Action<Vector2> OnMove;
-    
-
+    public event Action OnJump;
+    public event Action OnFall;
+    public event Action OnLand;
+    public event Action OnIdle;
     #endregion
     
     
     private void Awake()
     {
         _playerModel = GetComponent<PlayerModel>();
+        _playerModel.SubscribeEvents(this);
         _playerInput = GetComponent<iInput>();
+        
         
         FsmInit();
     }
@@ -27,16 +31,14 @@ public class PlayerController : MonoBehaviour
     
     private void FsmInit()
     {
-        
         //--------------- FSM Creation -------------------//                
-        var idle = new PlayerIdleState<PlayerStatesEnum>(_playerModel, PlayerStatesEnum.Run,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,PlayerStatesEnum.Jump,_playerInput );
-        var run = new PlayerRunState<PlayerStatesEnum>(_playerModel, PlayerStatesEnum.Idle, PlayerStatesEnum.Jump,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,_playerInput);
-        var jump = new PlayerJumpState<PlayerStatesEnum>(PlayerStatesEnum.Fall, PlayerStatesEnum.Idle,_playerModel);
-        var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,_playerInput, _playerModel);
-        var land = new PlayerLandState<PlayerStatesEnum>(PlayerStatesEnum.Idle, _playerModel);
-        var attack = new PlayerAttackState<PlayerStatesEnum>(PlayerStatesEnum.Idle,PlayerStatesEnum.Run,_playerModel,_playerInput);
-        
-        
+        var idle = new PlayerIdleState<PlayerStatesEnum>(CheckGroundPlayer,CheckJumpPlayer,IdleCommand, PlayerStatesEnum.Run,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,PlayerStatesEnum.Jump,_playerInput );
+        var run = new PlayerRunState<PlayerStatesEnum>(CheckGroundPlayer,CheckJumpPlayer, PlayerStatesEnum.Idle, PlayerStatesEnum.Jump,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,_playerInput,MoveCommand);
+        var jump = new PlayerJumpState<PlayerStatesEnum>(PlayerStatesEnum.Fall, PlayerStatesEnum.Idle,JumpCommand,CheckJumpPlayer);
+        var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,_playerInput,CheckGroundPlayer,FallCommand, MoveCommand);
+        var land = new PlayerLandState<PlayerStatesEnum>(PlayerStatesEnum.Idle, LandCommand);
+        var attack = new PlayerAttackState<PlayerStatesEnum>(PlayerStatesEnum.Idle,PlayerStatesEnum.Run,AttackCommand,_playerModel.data.damage,_playerInput);
+
         // Idle State
         idle.AddTransition(PlayerStatesEnum.Run, run);
         idle.AddTransition(PlayerStatesEnum.Jump,jump);
@@ -72,17 +74,47 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    #region Commands
+    #region Model Questions
 
-    public void AttackCommand()
+    private bool CheckGroundPlayer()
     {
-        OnAttack?.Invoke();
+        return _playerModel.CheckIfGrounded();
+    }
+
+    private bool CheckJumpPlayer()
+    {
+        return _playerModel.IsJumping();
+    }
+    
+
+    #endregion
+    
+    
+    #region Commands
+    public void AttackCommand(int dmg)
+    {
+        OnAttack?.Invoke(dmg);
     }
     public void MoveCommand(Vector2 dir)
     {
         OnMove?.Invoke(dir);
     }
-
+    public void JumpCommand()
+    {
+        OnJump?.Invoke();
+    }
+    public void LandCommand()
+    {
+        OnLand?.Invoke();
+    }
+    public void IdleCommand()
+    {
+        OnIdle?.Invoke();
+    }
+    public void FallCommand()
+    {
+        OnFall?.Invoke();
+    }
     #endregion
     private void Update()
     {

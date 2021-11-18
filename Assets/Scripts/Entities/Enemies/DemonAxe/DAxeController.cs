@@ -31,6 +31,7 @@ public class DAxeController : MonoBehaviour
     void InitDecisionTree()
     {
         
+        
     }
     void InitFSM()
     {
@@ -47,6 +48,34 @@ public class DAxeController : MonoBehaviour
         idle.AddTransition(DAxeStatesEnum.Attack,attack);
         idle.AddTransition(DAxeStatesEnum.Run,run);
         idle.AddTransition(DAxeStatesEnum.Dead,dead);
+        idle.AddTransition(DAxeStatesEnum.Hit,hit);
+        
+        // Patrol 
+        patrol.AddTransition(DAxeStatesEnum.Idle,idle);
+        patrol.AddTransition(DAxeStatesEnum.Run,run);
+        patrol.AddTransition(DAxeStatesEnum.Dead,dead);
+        patrol.AddTransition(DAxeStatesEnum.Attack,attack);
+        patrol.AddTransition(DAxeStatesEnum.Hit,hit);
+        
+        // Attack
+        attack.AddTransition(DAxeStatesEnum.Patrol,patrol);
+        attack.AddTransition(DAxeStatesEnum.Idle,idle);
+        attack.AddTransition(DAxeStatesEnum.Run,run);
+        attack.AddTransition(DAxeStatesEnum.Dead,dead);
+        attack.AddTransition(DAxeStatesEnum.Hit,hit);
+        
+        // Run
+        run.AddTransition(DAxeStatesEnum.Patrol,patrol);
+        run.AddTransition(DAxeStatesEnum.Idle,idle);
+        run.AddTransition(DAxeStatesEnum.Attack,attack);
+        run.AddTransition(DAxeStatesEnum.Dead,dead);
+        run.AddTransition(DAxeStatesEnum.Hit,hit);
+        
+        //
+        
+        
+        
+        
         
     }
 

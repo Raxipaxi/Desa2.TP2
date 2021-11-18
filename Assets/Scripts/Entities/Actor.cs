@@ -5,30 +5,20 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour, IDamageable, iMobile
 {
-    public int CurrentLife => _life;
-    
-    [SerializeField]public int _life = 100;
-
-    public int MaxLife => _maxLife;
-    [SerializeField]public int _maxLife = 100;
 
     public virtual void TakeDamage(int damage)
     {
-        _life -= damage;
+
         
-        if (_life <=0)
-        {
-            Die();
-        }
     }
 
     public virtual void RecoverLife(int _heal)
     {
-        _life += _heal;
+       
     }
     public virtual void Die()
     {
-        Destroy(gameObject);
+        throw new NotImplementedException();   
     }
 
     public virtual void Idle()

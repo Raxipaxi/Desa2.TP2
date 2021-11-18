@@ -9,15 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f34e273fcc94acc92c756fea2d08cb4, type: 3}
-  m_Name: PlayerData
+  m_Script: {fileID: 11500000, guid: eb8d36ca3b1a455c957c52afd8f8de41, type: 3}
+  m_Name: AxeDemon
   m_EditorClassIdentifier: 
-  walkSpeed: 6
-  speedFallPenalty: 1
-  groundDistance: 1.6
-  jumpHeight: 11
-  groundDetectionList:
-    serializedVersion: 2
-    m_Bits: 8
-  damage: 50
-  maxLife: 100
+  walkSpeed: 1
+  runSpeed: 3
+  groundDistance: 0.2
+  damage: 30
+  maxLife: 40

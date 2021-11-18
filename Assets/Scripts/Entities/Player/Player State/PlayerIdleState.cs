@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerIdleState<T> : State<T>
 {
@@ -7,31 +8,34 @@ public class PlayerIdleState<T> : State<T>
     private T _jumpInput;
     private T _fallInput;
     private iInput _playerInput;
-    private PlayerModel _playerModel;
+    private Func<bool> _checkGround;
+    private Func<bool> _isJumping;
+    private Action _onIdle;
 
-    public PlayerIdleState(PlayerModel playerModel, T runInput,T fallInput,T attackInput,T jumpInput,iInput playerInput)
+    public PlayerIdleState(Func<bool> checkground,Func<bool> isJumping,Action onIdle, T runInput,T fallInput,T attackInput,T jumpInput,iInput playerInput)
     {
-        _playerModel = playerModel;
+        _checkGround = checkground;
+        _isJumping = isJumping;
         _runInput = runInput;
         _attackInput = attackInput;
         _fallInput = fallInput;
         _jumpInput = jumpInput; 
         _playerInput = playerInput;
+        _onIdle = onIdle;
 
     }
 
     public override void Execute()
     {
-        if (_playerModel.CheckIfGrounded())
+        if (_checkGround())
         {
-            _playerModel.Idle();
+            _onIdle?.Invoke();
         }
     
         _playerInput.UpdateInputs(); 
 
-        if (!_playerModel.IsJumping()&&_playerModel.CheckIfGrounded())
+        if (!_isJumping()&&_checkGround())
         {
-            
             if (_playerInput.IsRunning())
             {
                 _fsm.Transition(_runInput);

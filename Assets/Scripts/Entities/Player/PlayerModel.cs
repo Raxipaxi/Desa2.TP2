@@ -9,36 +9,40 @@ public class PlayerModel : Actor
     private Rigidbody2D _rb;
     private float VelY => _rb.velocity.y;
     private PlayerView _view;
-    private PlayerController _controller;
-    public PlayerData _playerData;
-    
+    [SerializeField]public PlayerData data;
+
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRadius;
+    [SerializeField] private LayerMask enemyMask;
+
+
+    private int currLife;
+    public int MaxLife => data.maxLife;
+    public int CurrentLife => currLife;
     
     private bool isFacingRight;//Checks where is facing
     private bool isJumping;//Checks if it already jumping
     
     #endregion
-    
 
     private void Awake()
     {
         _transform = GetComponent<Transform>();
         _rb = GetComponent<Rigidbody2D>();
         _view = GetComponent<PlayerView>();
-        _controller = GetComponent<PlayerController>();
         isFacingRight = true;
         isJumping = false;
-        SubscribeEvents();
+        currLife = MaxLife;
     }
 
-    void SubscribeEvents()
+    public void SubscribeEvents(PlayerController controller)
     {
-        _controller.OnAttack += Attack;
-        _controller.OnMove += Move;
-    }
-
-    private void Attack()
-    {
-        throw new NotImplementedException();
+        controller.OnAttack += Attack;
+        controller.OnMove   += Move;
+        controller.OnJump   += Jump;
+        controller.OnLand   += Land;
+        controller.OnFall   += Fall;
+        controller.OnIdle   += Idle;
     }
 
     public override void Idle()
@@ -51,9 +55,9 @@ public class PlayerModel : Actor
     public override void Move(Vector2 dir)
     {
         bool isOnGround = !IsJumping() && CheckIfGrounded();
-        var finalSpeed = _playerData.walkSpeed;
+        var finalSpeed = data.walkSpeed;
         
-        if (!isOnGround) finalSpeed -= _playerData.speedFallPenalty;
+        if (!isOnGround) finalSpeed -= data.speedFallPenalty;
         
         
         var currDir = new Vector2(dir.x * finalSpeed,VelY);
@@ -81,21 +85,15 @@ public class PlayerModel : Actor
         var moving = _rb.velocity.x;
         
         _view.Attack(moving);
+        EnemyHitCheck()?.TakeDamage(data.damage*dmgModifier);
     }
+   
+    private void Flip()
+    {
 
-    public float GetSpeed()
-    {
-        return _playerData.walkSpeed;
-    }    
-    public float GetFallSpeed()
-    {
-        return _playerData.walkSpeed-_playerData.speedFallPenalty;
-    }
-    
-    private void Flip() 
-    {
-        _transform.Rotate(0f, 180f, 0f);
-       // _transform.LookAt(Vector3.forward); -- Chequear 
+        var y = isFacingRight ? 180f : 0f;
+        _transform.localRotation=Quaternion.Euler(0f, y, 0f);
+      
         isFacingRight = !isFacingRight;
     }
 
@@ -106,7 +104,7 @@ public class PlayerModel : Actor
         if (CheckIfGrounded())
         {
             _rb.velocity = new Vector2(_rb.velocity.x, 0f);
-            var jumpForce = _playerData.jumpHeight * transform.up;
+            var jumpForce = data.jumpHeight * transform.up;
             _rb.AddForce(jumpForce, ForceMode2D.Impulse);
         }
         _view.JumpAnimation();
@@ -125,11 +123,30 @@ public class PlayerModel : Actor
     }
     public bool CheckIfGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, _playerData.groundDistance, _playerData.groundDetectionList);
-        Debug.DrawRay(_transform.position, Vector2.down*_playerData.groundDistance, Color.cyan);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, data.groundDistance, data.groundDetectionList);
+        Debug.DrawRay(_transform.position, Vector2.down*data.groundDistance, Color.cyan);
         if(hit.collider != null)
             return true;
         return false;
     }
     #endregion
+
+    #region Attack
+
+    private IDamageable EnemyHitCheck()
+    {
+        var hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius,enemyMask); //  nonallocate masmejor
+        
+        if(hit==null) return null;
+
+        return hit.GetComponent<IDamageable>();
+    }
+    
+    #endregion
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color= Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
+    }
 }

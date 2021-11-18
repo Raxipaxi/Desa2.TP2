@@ -1,19 +1,19 @@
-﻿using UnityEngine;
+﻿using System;
 
 public class PlayerLandState<T> : State<T>
 {
     private T _inputIdle;
-    private PlayerModel _playerModel;
+    private Action _onLand;
 
-    public PlayerLandState(T inputIdle, PlayerModel playerModel)
+    public PlayerLandState(T inputIdle, Action onLand)
     {
         _inputIdle = inputIdle;
-        _playerModel = playerModel;
+        _onLand = onLand;
     }
 
     public override void Execute()
     {
-        _playerModel.Land();
+        _onLand?.Invoke();
         _fsm.Transition(_inputIdle);
     }
 }

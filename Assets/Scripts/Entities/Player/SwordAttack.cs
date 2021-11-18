@@ -25,7 +25,7 @@ public class SwordAttack : MonoBehaviour
         _controller.OnAttack += SwingSword;
     }
 
-    private void SwingSword()
+    private void SwingSword(int dmg)
     {
         _active = !_active;
         _collider.gameObject.SetActive(_active);

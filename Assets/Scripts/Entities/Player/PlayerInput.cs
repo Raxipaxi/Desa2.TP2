@@ -1,16 +1,30 @@
+using System;
 using Unity;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class PlayerInput : MonoBehaviour, iInput
 {
-
+    private PlayerInputJoy _joyInput;
     #region Axis
     public float GetH => _xAxis;
     public float GetV => _yAxis;
     float _xAxis;
     float _yAxis;
+    private float currX;
     #endregion
-    
+
+    private void Awake()
+    {
+        _joyInput = new PlayerInputJoy();
+        _joyInput.GamePlay.Jump.performed += ctx => IsJumping();
+        _joyInput.GamePlay.Move.performed += ctx=>  currX = ctx.ReadValue<float>();
+        _joyInput.GamePlay.Move.canceled += ctx => currX = 0f;
+
+
+    }
+
     public bool IsRunning()
     {
         return (GetH != 0); 
@@ -18,16 +32,29 @@ public class PlayerInput : MonoBehaviour, iInput
 
     public bool IsAttacking()
     {
-        return Input.GetKeyDown(KeyCode.Z);
+        return _joyInput.GamePlay.Attack.triggered;
     }    
     
     public bool IsJumping()
     {
-        return Input.GetKeyDown(KeyCode.Space);
+        return _joyInput.GamePlay.Jump.triggered;
     }
 
     public void UpdateInputs()
     {
-        _xAxis = Input.GetAxisRaw("Horizontal");
+        if (currX == 0) {_xAxis = 0;return;}
+        
+        if (currX > 0) { _xAxis = 1; return;}
+        if (currX < 0) { _xAxis = -1;}
+        
+        
+
+
+
+    }
+
+    private void OnEnable()
+    {
+        _joyInput.Enable();
     }
 }

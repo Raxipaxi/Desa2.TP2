@@ -4,8 +4,6 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    int CurrentLife { get; }
-    int MaxLife { get; }
     void TakeDamage(int x);
     void Die();
 }
