@@ -7,7 +7,7 @@ public class ObstacleAvoidance2D : ISteering2D
     private Transform _self;
     private Transform _target;
     private float _checkRadius;  
-    private Collider[] obstaclesColliders;
+    private Collider2D[] obstaclesColliders;
     private LayerMask _obstaclesMask;
     private float _multiplier;
     private ISteering2D[] _behaviours;
@@ -35,7 +35,7 @@ public class ObstacleAvoidance2D : ISteering2D
         _self = self;
         _target = target;
         _checkRadius = radius;
-        obstaclesColliders = new Collider[maxObjs];
+        obstaclesColliders = new Collider2D[maxObjs];
         _obstaclesMask = obstaclesMask;
         _multiplier = multiplier;
 
@@ -48,7 +48,7 @@ public class ObstacleAvoidance2D : ISteering2D
 
     private void SetBehaviours(Transform self, Transform target, IVel targetIvel, float timePrediction)
     {
-        _behaviours[0] = new Seek(self, target);
+        _behaviours[0] = new Seek2D(self, target);
         _behaviours[1] = new Flee2D(self, target);
         _behaviours[2] = new Pursuit2D(self,target,targetIvel,timePrediction);
         _behaviours[3] = new Evasion2D(self, target, targetIvel, timePrediction);
@@ -61,16 +61,16 @@ public class ObstacleAvoidance2D : ISteering2D
         Vector2 dir = _currentBehaviour.GetDir(); 
         //Vector2 dir = (_target.position - _self.position).normalized;
 
-        int countObjs = Physics.OverlapSphereNonAlloc(_self.position, _checkRadius, obstaclesColliders, _obstaclesMask);      
+        int countObjs = Physics2D.OverlapCircleNonAlloc(_self.position, _checkRadius, obstaclesColliders, _obstaclesMask);      
 
-        Collider nearestObject = null;
+        Collider2D nearestObject = null;
         float distanceNearObj = 0;
 
         for (int i = 0; i < countObjs; i++)
         {
             var curr = obstaclesColliders[i];
             if (_self.position == curr.transform.position) continue;
-            Vector2 closestPointToSelf = curr.ClosestPointOnBounds(_self.position);
+            Vector2 closestPointToSelf = curr.ClosestPoint(_self.position);
             float distanceCurr = Vector2.Distance(_self.position, closestPointToSelf);
 
             if (nearestObject == null)

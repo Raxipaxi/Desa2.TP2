@@ -9,16 +9,14 @@ public class PlayerModel : Actor
     private Rigidbody2D _rb;
     private float VelY => _rb.velocity.y;
     private PlayerView _view;
+    public LifeController LifeController { get; private set; }
+    
     [SerializeField]public PlayerData data;
 
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRadius;
     [SerializeField] private LayerMask enemyMask;
 
-
-    private int currLife;
-    public int MaxLife => data.maxLife;
-    public int CurrentLife => currLife;
     
     private bool isFacingRight;//Checks where is facing
     private bool isJumping;//Checks if it already jumping
@@ -27,12 +25,20 @@ public class PlayerModel : Actor
 
     private void Awake()
     {
+        BakeReferences();
+        LifeController.OnDead += Die;
+        
+        
+        isFacingRight = true;
+        isJumping = false;
+    }
+
+    void BakeReferences()
+    {
         _transform = GetComponent<Transform>();
         _rb = GetComponent<Rigidbody2D>();
         _view = GetComponent<PlayerView>();
-        isFacingRight = true;
-        isJumping = false;
-        currLife = MaxLife;
+        LifeController = new LifeController(data.maxLife, gameObject,  1f );
     }
 
     public void SubscribeEvents(PlayerController controller)
@@ -43,6 +49,8 @@ public class PlayerModel : Actor
         controller.OnLand   += Land;
         controller.OnFall   += Fall;
         controller.OnIdle   += Idle;
+
+        
     }
 
     public override void Idle()
@@ -109,6 +117,12 @@ public class PlayerModel : Actor
         }
         _view.JumpAnimation();
     }
+
+    public override void Die()
+    {
+        base.Die();
+    }
+
     public void Fall()
     {
         _view.FallAnimation();

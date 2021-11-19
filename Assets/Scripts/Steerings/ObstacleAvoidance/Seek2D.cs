@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seek : ISteering2D
+public class Seek2D : ISteering2D
 {
     private Transform _self;
     private Transform _target;
 
-    public Seek(Transform self, Transform target)
+    public Seek2D(Transform self, Transform target)
     {
         _self = self;
         _target = target;

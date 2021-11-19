@@ -115,6 +115,11 @@ public class PlayerController : MonoBehaviour
     {
         OnFall?.Invoke();
     }
+
+    public void DeadBrain()
+    {
+        _fsm.Transition(PlayerStatesEnum.Dead);
+    }
     #endregion
     private void Update()
     {

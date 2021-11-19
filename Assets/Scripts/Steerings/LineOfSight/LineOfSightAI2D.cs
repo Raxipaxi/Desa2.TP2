@@ -37,7 +37,8 @@ public class LineOfSightAI2D : MonoBehaviour
 
     public List <Transform> LineOfSightMultiTarget()
     {
-        Collider[] colls = Physics.OverlapSphere(lineOfSightOrigin.position, _sightData.range, _sightData.targetMask);
+        Vector2 initPos = new Vector2(lineOfSightOrigin.position.x, lineOfSightOrigin.position.y);
+        Collider2D[] colls = Physics2D.OverlapCircleAll(initPos, _sightData.range, _sightData.targetMask);
         List<Transform> listToReturn = new List<Transform>();
         if (colls.Length == 0) return listToReturn;
 
@@ -45,7 +46,7 @@ public class LineOfSightAI2D : MonoBehaviour
 
         for (int i = 0; i < colls.Length; i++)
         {
-            Collider curr = colls[i];            
+            Collider2D curr = colls[i];            
             Vector2 diff = curr.transform.position - lineOfSightOrigin.position;
             if (!IsInVisionAngle(diff, front)) continue;
             float distance = diff.magnitude;
