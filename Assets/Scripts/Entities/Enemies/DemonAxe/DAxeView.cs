@@ -16,6 +16,36 @@ public class DAxeView : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
     }
+
+    public void Subscribe(DAxeController controller)
+    {
+        controller.OnIdle += IdleAnimation;
+    }
+    void IdleAnimation()
+    {
+        _animator.Play("Idle");
+    }
+
+    void MoveAnimation()
+    {
+        //_animator.Play("");
+    }
+
+    void AttackAnimation()
+    {
+        //_animator.Play("");
+    }
+
+    void DieAnimation()
+    {
+        
+    }
+
+    void HitAnimation()
+    {
+        
+    }
+    
     
     
 }
