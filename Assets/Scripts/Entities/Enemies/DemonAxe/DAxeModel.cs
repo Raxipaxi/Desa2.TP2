@@ -87,20 +87,22 @@ public class DAxeModel : Actor
 
     public override void Move(Vector2 dir)
     {
-        dir.y = transform.position.y;
-        var currDir = dir.normalized;
-
-        var finalSpeed = _transform.position.x - dir.x   < 0 ? currSpeed * -1f : currSpeed;
+        dir.y = _transform.position.y;
         
-        if (isFacingRight && finalSpeed>0)
+        var Flipthing = _transform.position.x  - dir.x < 0 ? currSpeed * -1f : currSpeed;
+        
+        if (isFacingRight && Flipthing>0)
         {
             Flip();
         }
-        else if (!isFacingRight && finalSpeed<0)
+        else if (!isFacingRight && Flipthing<0)
         {
             Flip();
         }
-        _rb.velocity = currDir * finalSpeed;
+       
+        var direccion = dir - (Vector2)_transform.position;
+
+        _rb.velocity = direccion.normalized *  currSpeed;
 
     }
 
@@ -117,7 +119,6 @@ public class DAxeModel : Actor
         var hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius,playerMask); //  nonallocate masmejor
         
         if(hit==null) return null;
-        Debug.Log("Pegó Al player");
         return hit.GetComponent<IDamageable>();
     }
     private void OnDrawGizmosSelected()

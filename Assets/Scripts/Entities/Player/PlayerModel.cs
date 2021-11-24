@@ -144,7 +144,6 @@ public class PlayerModel : Actor
         var hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius,enemyMask); //  nonallocate masmejor
         
         if(hit==null) return null;
-        Debug.Log("Pegó");
         return hit.GetComponent<IDamageable>();
     }
     

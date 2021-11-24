@@ -67,8 +67,8 @@ public class DAxePatrolState<T> : State<T>
     {
         
         for (int i = 0; i < _waypoints.Length; i++)
-        {
-            var temp = _waypoints[i];;
+        { 
+           var temp = _waypoints[i];
            if (_currWaypoint!=temp&&!_visited.Contains(temp))
             {
                 _currWaypoint = temp;
