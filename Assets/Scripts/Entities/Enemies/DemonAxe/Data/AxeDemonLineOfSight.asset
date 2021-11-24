@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d8edce718ebe249b8d5b2a4cd0c346, type: 3}
   m_Name: AxeDemonLineOfSight
   m_EditorClassIdentifier: 
-  range: 3
-  angle: 45
+  range: 6
+  angle: 30
   obstaclesMask:
     serializedVersion: 2
     m_Bits: 8
