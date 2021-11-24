@@ -24,6 +24,11 @@ public class DAxeView : MonoBehaviour
         controller.OnAttack += AttackAnimation;
         controller.OnDie += DieAnimation;
     }
+
+    public void Subscribe(DAxeModel model)
+    {
+        
+    }
     public void IdleAnimation()
     {
         _animator.Play("DemonIdle");
