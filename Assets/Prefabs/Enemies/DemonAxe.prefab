@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c912c0970ac965e45955234c4e3d3c22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sightLenght: 0
-  _seen: 0
+  _sightLenght: 5
+  _seen: 1
   _player: {fileID: 0}
   _minDistance: 1
   _idleCD: 1

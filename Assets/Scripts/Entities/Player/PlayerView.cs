@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerView : MonoBehaviour
 {
-    public static Animator _playerAnimator;
+    private Animator _playerAnimator;
     
 
     void Awake()
@@ -18,6 +18,10 @@ public class PlayerView : MonoBehaviour
         _playerAnimator.SetBool(PlayerAnimParameters.IsRunning,true);
     }
 
+    public void HitAnimation()
+    {
+        _playerAnimator.Play("Hitted");
+    }
     
     public void IdleAnimation()
     {
