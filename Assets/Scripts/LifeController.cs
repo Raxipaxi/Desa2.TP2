@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LifeController 
@@ -18,10 +16,6 @@ public class LifeController
     public bool isFullHealth => currentLife == MaxLife;
 
     public float LifePercentage => currentLife / MaxLife;
-    public bool IsInvincible { get; set; }
-
-    public float InvincibilityTimeStart { get; private set; }
-    private float invincibilityTime;
 
 
     public float CurrentLife
@@ -54,25 +48,18 @@ public class LifeController
         currentLife = MaxLife;
         onRevive?.Invoke(LifePercentage);
     }
-    public LifeController(float maxlife,GameObject owner, float invincibilityTimeStart = 1.5f)
+    public LifeController(float maxlife,GameObject owner)
     {
         MaxLife = maxlife;
         CurrentLife = maxlife;
-        InvincibilityTimeStart = invincibilityTimeStart;
-        invincibilityTime = InvincibilityTimeStart;
         _owner = owner;
     }
 
-    public void GetDamage(float damage, bool ignoresInvincibility = false)
+    public void GetDamage(float damage)
     {
         if (!IsAlive) return;
-
-        if ((invincibilityTime >= InvincibilityTimeStart && !IsInvincible) || ignoresInvincibility)
-        {           
-            CurrentLife -= damage;
-            invincibilityTime = 0;
-            OnGetDamage?.Invoke(CurrentLife, damage);
-        }
+          CurrentLife -= damage;
+          OnGetDamage?.Invoke(CurrentLife, damage);
     }
 
 
@@ -81,18 +68,4 @@ public class LifeController
         CurrentLife += heal;
         OnGetHeal?.Invoke(CurrentLife, heal);
     }
-
-
-    public void Update()
-    {
-        invincibilityTime += Time.deltaTime;
-    }
-
-    public void SetInvincibility(bool isInvincible)
-    {
-        this.IsInvincible = isInvincible;      
-    }
-
-
-
 }

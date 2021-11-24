@@ -5,7 +5,7 @@ using UnityEngine;
 public class DAxeView : MonoBehaviour
 {
     private Animator _animator;
-
+    public bool isRunning;
 
     private void Awake()
     {
@@ -20,30 +20,34 @@ public class DAxeView : MonoBehaviour
     public void Subscribe(DAxeController controller)
     {
         controller.OnIdle += IdleAnimation;
+        controller.OnWalk += MoveAnimation;
+        controller.OnAttack += AttackAnimation;
+        controller.OnDie += DieAnimation;
     }
-    void IdleAnimation()
+    public void IdleAnimation()
     {
-        _animator.Play("Idle");
-    }
-
-    void MoveAnimation()
-    {
-        //_animator.Play("");
+        _animator.Play("DemonIdle");
     }
 
-    void AttackAnimation()
+    public void MoveAnimation(Vector2 dir)
     {
-        //_animator.Play("");
+        _animator.speed = isRunning? 1f: 0.5f;
+        _animator.Play("DemonMove");
     }
 
-    void DieAnimation()
+    public void AttackAnimation(int blah)
     {
-        
+        _animator.Play("DemonAttack");
     }
 
-    void HitAnimation()
+    public void DieAnimation()
     {
-        
+        _animator.Play("DemonDead");
+    }
+
+    public void HitAnimation()
+    {
+        _animator.Play("DemonHit");
     }
     
     

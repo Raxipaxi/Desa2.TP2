@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         _playerModel = GetComponent<PlayerModel>();
         _playerModel.SubscribeEvents(this);
         _playerInput = GetComponent<iInput>();
-        
+        SubscribeEvents();
         
         FsmInit();
     }
@@ -128,6 +128,11 @@ public class PlayerController : MonoBehaviour
             _fsm.OnUpdate();
             
         }
+    }
+
+    void SubscribeEvents()
+    {
+        
     }
     
 }

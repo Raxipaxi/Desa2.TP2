@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: AxeDemon
   m_EditorClassIdentifier: 
   walkSpeed: 1
-  runSpeed: 3
+  runSpeed: 2
   groundDistance: 0.2
   damage: 30
+  attackDist: 0
   maxLife: 40

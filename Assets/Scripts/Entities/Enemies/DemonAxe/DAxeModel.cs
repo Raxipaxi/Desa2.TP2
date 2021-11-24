@@ -7,10 +7,11 @@ using UnityEngine;
 public class DAxeModel : Actor
 {
     [SerializeField] public EnemyData data;
-    private Rigidbody _rb;
+    private Rigidbody2D _rb;
     private DAxeView _dAxeView;
     private int _currLife;
     private int _currDmg;
+    private Transform _transform;
     private int CurrLife => _currLife;
     public event Action OnDie;
 
@@ -28,11 +29,13 @@ public class DAxeModel : Actor
         _currLife = data.maxLife;
         _currDmg = data.damage;
         isFacingRight = true;
+        _transform = transform;
     }
 
     public void BakeReferences()
     {
-        _rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody2D>();
+        _dAxeView = GetComponent<DAxeView>();
     }
 
     public void Subscribe(DAxeController controller)
@@ -52,13 +55,20 @@ public class DAxeModel : Actor
         }
     }
 
+    public override void Idle()
+    {
+        _rb.velocity = Vector2.zero;
+    }
+
     void Run(Vector2 dir)
     {
+        _dAxeView.isRunning = true;
         currSpeed = data.runSpeed;
         Move(dir);
     }    
     void Walk(Vector2 dir)
     {
+        _dAxeView.isRunning = false;
         currSpeed = data.walkSpeed;
         Move(dir);
     }
@@ -70,18 +80,21 @@ public class DAxeModel : Actor
 
     public override void Move(Vector2 dir)
     {
-        var currDir = dir.x * currSpeed;
-        var finalVel = new Vector3(currDir, dir.y,0f);
-        _rb.velocity = finalVel;
+        dir.y = transform.position.y;
+        var currDir = dir.normalized;
+
+        var finalSpeed = _transform.position.x - dir.x   < 0 ? currSpeed * -1f : currSpeed;
         
-        if (isFacingRight && dir.x<0)
+        if (isFacingRight && finalSpeed>0)
         {
             Flip();
         }
-        else if (!isFacingRight && dir.x>0)
+        else if (!isFacingRight && finalSpeed<0)
         {
             Flip();
         }
+        _rb.velocity = currDir * finalSpeed;
+
     }
     
     private void Flip()

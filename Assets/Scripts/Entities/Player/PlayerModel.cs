@@ -9,7 +9,6 @@ public class PlayerModel : Actor
     private Rigidbody2D _rb;
     private float VelY => _rb.velocity.y;
     private PlayerView _view;
-    public LifeController LifeController { get; private set; }
     
     [SerializeField]public PlayerData data;
 
@@ -26,7 +25,6 @@ public class PlayerModel : Actor
     private void Awake()
     {
         BakeReferences();
-        LifeController.OnDead += Die;
         
         
         isFacingRight = true;
@@ -38,7 +36,6 @@ public class PlayerModel : Actor
         _transform = GetComponent<Transform>();
         _rb = GetComponent<Rigidbody2D>();
         _view = GetComponent<PlayerView>();
-        LifeController = new LifeController(data.maxLife, gameObject,  1f );
     }
 
     public void SubscribeEvents(PlayerController controller)
@@ -49,8 +46,6 @@ public class PlayerModel : Actor
         controller.OnLand   += Land;
         controller.OnFall   += Fall;
         controller.OnIdle   += Idle;
-
-        
     }
 
     public override void Idle()
@@ -67,9 +62,7 @@ public class PlayerModel : Actor
         
         if (!isOnGround) finalSpeed -= data.speedFallPenalty;
         
-        
         var currDir = new Vector2(dir.x * finalSpeed,VelY);
-       
         
         _rb.velocity = currDir;
         
@@ -81,7 +74,6 @@ public class PlayerModel : Actor
         {
             Flip();
         }
-
         if (isOnGround)
         {
            _view.RunAnimation(currDir.normalized.x);
@@ -152,7 +144,7 @@ public class PlayerModel : Actor
         var hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius,enemyMask); //  nonallocate masmejor
         
         if(hit==null) return null;
-
+        Debug.Log("Pegó");
         return hit.GetComponent<IDamageable>();
     }
     
