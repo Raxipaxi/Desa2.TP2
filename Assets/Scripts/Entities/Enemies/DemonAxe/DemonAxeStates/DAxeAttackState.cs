@@ -10,13 +10,13 @@ public class DAxeAttackState<T> : State<T>
     private float _counter;
     private Action<int> _onAttack;
     private int _dmg;
-    private iNode _root;
+    private Action _onChase;
 
-    public DAxeAttackState(float attackCd, Action<int> onAttack, iNode root)
+    public DAxeAttackState(float attackCd, Action<int> onAttack, Action onChase)
     {
         _attackCd = attackCd;
         _onAttack = onAttack;
-        _root = root;
+        onChase = onChase;
         _counter = 0f;
     }
 
@@ -27,7 +27,11 @@ public class DAxeAttackState<T> : State<T>
             _onAttack?.Invoke(_dmg);
             _counter = Time.time + _attackCd;
         }
-        _root.Execute();
+        else
+        {
+            _onChase?.Invoke();
+        }
+      
     }
     
 }

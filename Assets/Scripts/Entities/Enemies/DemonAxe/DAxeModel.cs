@@ -107,8 +107,7 @@ public class DAxeModel : Actor
     #endregion
 
     #region Attack Methods
-
-    void Attack(int dmg)
+    public override void Attack(int dmg)
     {
         _dAxeView.AttackAnimation(dmg);
         PlayerHitCheck()?.TakeDamage(dmg);

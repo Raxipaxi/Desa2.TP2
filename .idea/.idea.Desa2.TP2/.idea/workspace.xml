@@ -2,11 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc10c66-34c3-430c-98ea-df313a8ee755" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Traps.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Traps/FireColumn.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Traps/FireColumn/FireColumn.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Traps/FireColumn/FireColumn.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Traps/FireColumn/IdleFire.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Traps/FireColumn/IdleFire.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Traps/FireColumn/Rise.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Traps/FireColumn/Rise.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FireColumn.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/FireColumn.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/DemonAxe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/DemonAxe.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Parallax/Parallax 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Parallax/Parallax 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Parallax/Parallax 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Parallax/Parallax 3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/Data/AxeDemon.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/Data/AxeDemon.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeStates/DAxeAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeStates/DAxeAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_10.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_10.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_11.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_12.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_12.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_13.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_13.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_14.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_14.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_9.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/pack_effect_fire_column/fire_column_medium_9.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +139,8 @@
       <workItem from="1637239589733" duration="24876000" />
       <workItem from="1637359513948" duration="7407000" />
       <workItem from="1637671856255" duration="21541000" />
+      <workItem from="1637720595909" duration="491000" />
+      <workItem from="1637769816821" duration="8850000" />
     </task>
     <task id="LOCAL-00001" summary="DemonAxe Added">
       <created>1635979042829</created>

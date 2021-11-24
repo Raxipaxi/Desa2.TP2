@@ -8,7 +8,9 @@ public class DAxeController : MonoBehaviour
 
     private DAxeModel _dAxeModel;
     private DAxeView _dAxeView;
-    private LineOfSightAI2D _lineOfSight;
+    [SerializeField]private float _sightLenght;
+    [SerializeField]private float _seen;
+    
     public PlayerModel _player;
     public float _minDistance;
    
@@ -17,7 +19,7 @@ public class DAxeController : MonoBehaviour
     [SerializeField]private Transform[] waypoints;
     private Transform Target => _player.transform;
     private Transform _transform;
-
+    private float distanceBetweenTarget => Vector2.Distance(_transform.position, Target.position);
     private FSM<DAxeStatesEnum> _fsm;
     private iNode _root;
 
@@ -38,7 +40,6 @@ public class DAxeController : MonoBehaviour
     {
         _dAxeModel = GetComponent<DAxeModel>();
         _dAxeView = GetComponent<DAxeView>();
-        _lineOfSight = GetComponent<LineOfSightAI2D>();
     }
 
     void Start()
@@ -63,7 +64,7 @@ public class DAxeController : MonoBehaviour
         // Question Nodes
 
         QuestionNode isInReach = new QuestionNode(CanAttack, goToAttack, goToRun);
-        QuestionNode isPlayerOnSight = new QuestionNode(CheckSeesPlayer, isInReach, goToPatrol);
+        QuestionNode isPlayerOnSight = new QuestionNode(CanSeeTheTarget, isInReach, goToPatrol);
         QuestionNode isIdleTime = new QuestionNode(IsIdleCD, goToIdle, isPlayerOnSight);
         
         _root = isIdleTime;
@@ -75,10 +76,10 @@ public class DAxeController : MonoBehaviour
         var idle = new DAxeIdleState<DAxeStatesEnum>(CanSeeTheTarget,IdleCommand,_idleCD,SetIdleCDOn,_root);
         var patrol = new DAxePatrolState<DAxeStatesEnum>(CanSeeTheTarget, waypoints,_transform,WalkCommand,SetIdleCDOn, _minDistance,_root);
         var run = new DAxeRunState<DAxeStatesEnum>( RunCommand,Target,CanAttack, CanSeeTheTarget, _root);
-        var attack = new DAxeAttackState<DAxeStatesEnum>(_dAxeModel.data.attackCooldown, AttackCommand, _root);
+        var attack = new DAxeAttackState<DAxeStatesEnum>(_dAxeModel.data.attackCooldown, AttackCommand, () => _fsm.Transition(DAxeStatesEnum.Run));
         var hit = new DAxeHitState<DAxeStatesEnum>();
         var dead = new DAxeDeadState<DAxeStatesEnum>();
-
+    
         //Idle
         idle.AddTransition(DAxeStatesEnum.Patrol, patrol);
         idle.AddTransition(DAxeStatesEnum.Attack, attack);
@@ -144,26 +145,24 @@ public class DAxeController : MonoBehaviour
     #endregion
     public bool CanSeeTheTarget()
     {
-        return _lineOfSight.SingleTargetInSight(Target);
+        var canSee = distanceBetweenTarget - _sightLenght;
+        var iCanSeeU = canSee <= _seen;
+
+        return iCanSeeU;
     }
+       
     public bool CanAttack()
     {
-        return _dAxeModel.data.attackDist <= Vector2.Distance(transform.position, Target.position);
+        var canAttack = _dAxeModel.data.attackDist >= distanceBetweenTarget;
+        return canAttack ;
     }
-
     public void SetIdleCDOn(bool idleState)
     {
         _isInIdle = idleState;
     }
-
     public bool IsIdleCD()
     {
         return _isInIdle;
-    }
-
-    public bool CheckSeesPlayer()
-    {
-        return _lineOfSight.SingleTargetInSight(_player.transform);
     }
     
     // Update is called once per frame
