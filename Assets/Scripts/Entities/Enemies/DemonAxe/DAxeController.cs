@@ -75,7 +75,7 @@ public class DAxeController : MonoBehaviour
         var idle = new DAxeIdleState<DAxeStatesEnum>(CanSeeTheTarget,IdleCommand,_idleCD,SetIdleCDOn,_root);
         var patrol = new DAxePatrolState<DAxeStatesEnum>(CanSeeTheTarget, waypoints,_transform,WalkCommand,SetIdleCDOn, _minDistance,_root);
         var run = new DAxeRunState<DAxeStatesEnum>( RunCommand,Target,CanAttack, CanSeeTheTarget, _root);
-        var attack = new DAxeAttackState<DAxeStatesEnum>();
+        var attack = new DAxeAttackState<DAxeStatesEnum>(_dAxeModel.data.attackCooldown, AttackCommand, _root);
         var hit = new DAxeHitState<DAxeStatesEnum>();
         var dead = new DAxeDeadState<DAxeStatesEnum>();
 
@@ -122,15 +122,18 @@ public class DAxeController : MonoBehaviour
     }
 
     public void WalkCommand(Vector2 dir)
-
     {
         OnWalk?.Invoke(dir);
     }
 
     public void RunCommand(Vector2 dir)
-
     {
         OnRun?.Invoke(dir);
+    }
+
+    public void AttackCommand(int dmg)
+    {
+        OnAttack?.Invoke(dmg);
     }
 
     public void DieCommand()

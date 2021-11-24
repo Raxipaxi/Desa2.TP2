@@ -11,7 +11,7 @@ public class EnemyData : ScriptableObject
     
     [Header("Damage")] 
     public int damage;
-
+    public float attackCooldown;
     public float attackDist;
 
     [Header("Life")] public int maxLife;
