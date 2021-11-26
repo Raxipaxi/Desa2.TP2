@@ -16,8 +16,8 @@ public class DAxeAttackState<T> : State<T>
     {
         _attackCd = attackCd;
         _onAttack = onAttack;
-        onChase = onChase;
-        _counter = 0f;
+        _onChase = onChase;
+        ResetCD();
     }
 
     public override void Execute()
@@ -25,7 +25,7 @@ public class DAxeAttackState<T> : State<T>
         if  (Time.time > _counter )
         {
             _onAttack?.Invoke(_dmg);
-            _counter = Time.time + _attackCd;
+            ResetCD();
         }
         else
         {
@@ -33,5 +33,9 @@ public class DAxeAttackState<T> : State<T>
         }
       
     }
-    
+
+    private void ResetCD()
+    {
+        _counter = Time.time + _attackCd;
+    }
 }

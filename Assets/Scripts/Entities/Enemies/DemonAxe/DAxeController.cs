@@ -134,7 +134,7 @@ public class DAxeController : MonoBehaviour
 
     public void AttackCommand(int dmg)
     {
-        OnAttack?.Invoke(dmg);
+        OnAttack?.Invoke(_dAxeModel.data.damage);
     }
 
     public void DieCommand()

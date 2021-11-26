@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 126626345}
   - component: {fileID: 126626344}
   - component: {fileID: 126626343}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: env_rock_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,9 +195,9 @@ EdgeCollider2D:
   m_Points:
   - {x: -5.567959, y: -1.1548729}
   - {x: -5.3927517, y: 0.15600109}
-  - {x: -4.942854, y: 2.2173557}
-  - {x: 0.5658512, y: 2.7311277}
-  - {x: 2.9679031, y: 4.241482}
+  - {x: -4.8664227, y: 1.937109}
+  - {x: 0.54037285, y: 2.4254036}
+  - {x: 2.6876554, y: 4.0376663}
   - {x: 6.0209675, y: 4.13413}
   - {x: 6.8152237, y: -0.9238968}
   m_AdjacentStartPoint: {x: 0, y: 0}

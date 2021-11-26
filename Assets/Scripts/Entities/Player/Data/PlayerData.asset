@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 6
   speedFallPenalty: 1
-  groundDistance: 1.6
+  groundDistance: 1.5
   jumpHeight: 14
   groundDetectionList:
     serializedVersion: 2
