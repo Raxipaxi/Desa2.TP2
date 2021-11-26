@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
     {
         OnDie?.Invoke();
         
-       // _fsm.Transition(PlayerStatesEnum.Dead);
+        _fsm.Transition(PlayerStatesEnum.Dead);
     }
     public void DeadBrain(){
         _fsm.Transition(PlayerStatesEnum.Dead);
