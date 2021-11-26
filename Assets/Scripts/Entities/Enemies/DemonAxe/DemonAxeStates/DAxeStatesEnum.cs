@@ -9,3 +9,8 @@ public enum DAxeStatesEnum
     Hit
     
 }
+
+ public static class DemonAnimationParameters
+ {
+     public const string IsDead = "isDead";
+ }

@@ -23,12 +23,13 @@ public class DAxeView : MonoBehaviour
         controller.OnWalk += MoveAnimation;
         controller.OnAttack += AttackAnimation;
         controller.OnDie += DieAnimation;
+        controller.OnHit += HitAnimation;
     }
 
-    public void Subscribe(DAxeModel model)
-    {
-        
-    }
+    // public void Subscribe(DAxeModel model)
+    // {
+    //     
+    // }
     public void IdleAnimation()
     {
         _animator.Play("DemonIdle");
@@ -42,12 +43,14 @@ public class DAxeView : MonoBehaviour
 
     public void AttackAnimation(int blah)
     {
+        Debug.Log("holis");
         _animator.Play("DemonAttack");
     }
 
     public void DieAnimation()
     {
         _animator.Play("DemonDead");
+        //_animator.SetBool(DemonAnimationParameters.IsDead,true);
     }
 
     public void HitAnimation()

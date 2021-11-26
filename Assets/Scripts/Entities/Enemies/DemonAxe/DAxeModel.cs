@@ -17,14 +17,11 @@ public class DAxeModel : Actor
     private Rigidbody2D _rb;
     private DAxeView _dAxeView;
     private int _currLife;
-    private int _currDmg;
     private Transform _transform;
-    private int CurrLife => _currLife;
     public event Action OnDie;
     public event Action OnHit;
 
     private float currSpeed;
-    
 
     private DAxeController _controller;
     private DAxeView _view;
@@ -37,7 +34,6 @@ public class DAxeModel : Actor
         BakeReferences();
         isFacingRight = true;
         _currLife = data.maxLife;
-        _currDmg = data.damage;
         isFacingRight = true;
         _transform = transform;
     }
@@ -59,6 +55,8 @@ public class DAxeModel : Actor
     public override void TakeDamage(int damage)
     {
         _currLife -= damage;
+        Debug.LogWarning("Me hicieron nana " + damage);
+        OnHit?.Invoke();
         if (_currLife<=0)
         {
             Die();
@@ -111,17 +109,18 @@ public class DAxeModel : Actor
     #region Attack Methods
     public override void Attack(int dmg)
     {
-        _dAxeView.AttackAnimation(dmg);
-        PlayerHitCheck()?.TakeDamage(dmg);
+        
+        Idle();
     }
-    private IDamageable PlayerHitCheck()
+    private void PlayerHitCheck()
     {
         var hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius,playerMask); //  nonallocate masmejor
+      //  OnDrawGizmo();
+        var player =  hit.GetComponent<IDamageable>();
         
-        if(hit==null) return null;
-        return hit.GetComponent<IDamageable>();
+        player?.TakeDamage(data.damage);
     }
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmo()
     {
         Gizmos.color= Color.red;
         Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
@@ -131,6 +130,8 @@ public class DAxeModel : Actor
 
     public override void Die()
     {
+        _rb.velocity = Vector2.zero;
+
         OnDie?.Invoke();
     }
 

@@ -1,15 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 public class DAxeDeadState<T> : State<T>
 {
-    public override void Awake()
+    private event Action _onDieBrain;
+
+    public DAxeDeadState(Action onDieBrain)
     {
-        base.Awake();
+        _onDieBrain = onDieBrain;
+
     }
 
     public override void Execute()
     {
-        base.Execute();
+        Debug.Log("MORIIII");
+
+       _onDieBrain?.Invoke();
     }
 }

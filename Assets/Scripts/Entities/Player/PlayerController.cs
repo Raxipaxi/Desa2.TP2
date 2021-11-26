@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,_playerInput,CheckGroundPlayer,FallCommand, MoveCommand);
         var land = new PlayerLandState<PlayerStatesEnum>(PlayerStatesEnum.Idle, LandCommand);
         var hit = new PlayerHitState<PlayerStatesEnum>(PlayerStatesEnum.Idle);
-        var attack = new PlayerAttackState<PlayerStatesEnum>(PlayerStatesEnum.Idle,PlayerStatesEnum.Run,AttackCommand,_playerModel.data.damage,_playerInput);
+        var attack = new PlayerAttackState<PlayerStatesEnum>(PlayerStatesEnum.Idle,PlayerStatesEnum.Run,AttackCommand,1,_playerInput);
         var dead = new PlayerDeadState<PlayerStatesEnum>(DieCommand);
 
         // Idle State

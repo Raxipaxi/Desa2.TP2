@@ -1,7 +1,4 @@
-﻿
-
-using System;
-using UnityEditor.AssetImporters;
+﻿using System;
 using UnityEngine;
 
 public class DAxeAttackState<T> : State<T>
@@ -10,13 +7,15 @@ public class DAxeAttackState<T> : State<T>
     private float _counter;
     private Action<int> _onAttack;
     private int _dmg;
-    private Action _onChase;
+    private iNode _root;
+    private Action<bool> _idleCD;
 
-    public DAxeAttackState(float attackCd, Action<int> onAttack, Action onChase)
+    public DAxeAttackState(float attackCd, Action<int> onAttack,Action<bool> idleCD, iNode root)
     {
         _attackCd = attackCd;
         _onAttack = onAttack;
-        _onChase = onChase;
+        _idleCD = idleCD;
+        _root = root;
         ResetCD();
     }
 
@@ -24,14 +23,13 @@ public class DAxeAttackState<T> : State<T>
     {
         if  (Time.time > _counter )
         {
-            _onAttack?.Invoke(_dmg);
+            Debug.Log("Counter : " + _counter);
+            Debug.Log("Time : " + Time.time);
             ResetCD();
+            _onAttack?.Invoke(_dmg);
+            _idleCD?.Invoke(true);
         }
-        else
-        {
-            _onChase?.Invoke();
-        }
-      
+        _root.Execute();
     }
 
     private void ResetCD()

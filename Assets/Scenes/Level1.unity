@@ -18600,24 +18600,8 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 485712145}
-    - target: {fileID: 8394599705119920369, guid: b6cced1dc39a0c442b022034468baf4d, type: 3}
-      propertyPath: m_Mass
-      value: 2.1130993
-      objectReference: {fileID: 0}
-    - target: {fileID: 8394599705119920369, guid: b6cced1dc39a0c442b022034468baf4d, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8394599705119920369, guid: b6cced1dc39a0c442b022034468baf4d, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8394599705119920369, guid: b6cced1dc39a0c442b022034468baf4d, type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8394599705119920369, guid: b6cced1dc39a0c442b022034468baf4d, type: 3}
-      propertyPath: m_UseAutoMass
+    - target: {fileID: 8394599705119920370, guid: b6cced1dc39a0c442b022034468baf4d, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8394599705119920371, guid: b6cced1dc39a0c442b022034468baf4d, type: 3}

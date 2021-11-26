@@ -13,6 +13,8 @@ public class DAxeController : MonoBehaviour
     
     public PlayerModel _player;
     public float _minDistance;
+
+    public bool isDead;
    
     [SerializeField] private float _idleCD;
     private bool _isInIdle;
@@ -26,10 +28,8 @@ public class DAxeController : MonoBehaviour
     // Actions 
     public event Action OnIdle;
     public event Action<Vector2> OnWalk, OnRun;
-
     public event Action<int> OnAttack;
-    public event Action OnDie;
-    
+    public event Action OnDie, OnHit;
     
     private void Awake()
     {
@@ -46,10 +46,18 @@ public class DAxeController : MonoBehaviour
     {
         _dAxeModel.Subscribe(this);
         _dAxeView.Subscribe(this);
+        Subscribe();
         _isInIdle = true;
+        isDead = false;
         _transform = transform;
         InitDecisionTree();
         InitFSM();
+    }
+
+    void Subscribe()
+    {
+        _dAxeModel.OnHit += HitCommand;
+        _dAxeModel.OnDie += DieCommand;
     }
 
     void InitDecisionTree()
@@ -76,33 +84,37 @@ public class DAxeController : MonoBehaviour
         var idle = new DAxeIdleState<DAxeStatesEnum>(CanSeeTheTarget,IdleCommand,_idleCD,SetIdleCDOn,_root);
         var patrol = new DAxePatrolState<DAxeStatesEnum>(CanSeeTheTarget, waypoints,_transform,WalkCommand,SetIdleCDOn, _minDistance,_root);
         var run = new DAxeRunState<DAxeStatesEnum>( RunCommand,Target,CanAttack, CanSeeTheTarget, _root);
-        var attack = new DAxeAttackState<DAxeStatesEnum>(_dAxeModel.data.attackCooldown, AttackCommand, () => _fsm.Transition(DAxeStatesEnum.Run));
-        var hit = new DAxeHitState<DAxeStatesEnum>();
-        var dead = new DAxeDeadState<DAxeStatesEnum>();
+        var attack = new DAxeAttackState<DAxeStatesEnum>(_dAxeModel.data.attackCooldown, AttackCommand,SetIdleCDOn, _root);
+        var hit = new DAxeHitState<DAxeStatesEnum>(_root);
+        var dead = new DAxeDeadState<DAxeStatesEnum>(DestroyEnemy);
     
         //Idle
         idle.AddTransition(DAxeStatesEnum.Patrol, patrol);
         idle.AddTransition(DAxeStatesEnum.Attack, attack);
         idle.AddTransition(DAxeStatesEnum.Run, run);
         idle.AddTransition(DAxeStatesEnum.Hit, hit);
+        idle.AddTransition(DAxeStatesEnum.Dead, dead);
 
         // Patrol 
         patrol.AddTransition(DAxeStatesEnum.Idle, idle);
         patrol.AddTransition(DAxeStatesEnum.Run, run);
         patrol.AddTransition(DAxeStatesEnum.Attack, attack);
         patrol.AddTransition(DAxeStatesEnum.Hit, hit);
+        patrol.AddTransition(DAxeStatesEnum.Dead, dead);
 
         // Attack
         attack.AddTransition(DAxeStatesEnum.Patrol, patrol);
         attack.AddTransition(DAxeStatesEnum.Idle, idle);
         attack.AddTransition(DAxeStatesEnum.Run, run);
         attack.AddTransition(DAxeStatesEnum.Hit, hit);
+        attack.AddTransition(DAxeStatesEnum.Dead, dead);
 
         // Run
         run.AddTransition(DAxeStatesEnum.Patrol, patrol);
         run.AddTransition(DAxeStatesEnum.Idle, idle);
         run.AddTransition(DAxeStatesEnum.Attack, attack);
         run.AddTransition(DAxeStatesEnum.Hit, hit);
+        run.AddTransition(DAxeStatesEnum.Dead, dead);
 
         // Hit
         hit.AddTransition(DAxeStatesEnum.Patrol, patrol);
@@ -140,6 +152,26 @@ public class DAxeController : MonoBehaviour
     public void DieCommand()
     {
         OnDie?.Invoke();
+        Debug.Log("morimo no?");
+        _fsm.Transition(DAxeStatesEnum.Dead);
+
+    }
+
+    public  void DestroyEnemy()
+    { 
+      
+      Debug.Log("morimo?");
+      isDead = true;
+      GetComponent<Collider2D>().enabled = false;
+      GetComponent<Rigidbody2D>().isKinematic = true;
+
+      this.enabled = false;
+
+    }
+
+    public void HitCommand()
+    {
+        OnHit?.Invoke();
     }
 
     #endregion
@@ -165,9 +197,8 @@ public class DAxeController : MonoBehaviour
         return _isInIdle;
     }
     
-    // Update is called once per frame
     void Update()
     {
-        _fsm.OnUpdate();
+        if(!isDead) _fsm.OnUpdate();
     }
 }
