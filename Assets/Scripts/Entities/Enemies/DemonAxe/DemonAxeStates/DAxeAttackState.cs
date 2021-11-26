@@ -16,23 +16,23 @@ public class DAxeAttackState<T> : State<T>
         _onAttack = onAttack;
         _idleCD = idleCD;
         _root = root;
-        ResetCD();
+        ResetCd();
     }
 
     public override void Execute()
     {
         if  (Time.time > _counter )
         {
-            Debug.Log("Counter : " + _counter);
-            Debug.Log("Time : " + Time.time);
-            ResetCD();
+            // Debug.Log("Counter : " + _counter);
+            // Debug.Log("Time : " + Time.time);
+            ResetCd();
             _onAttack?.Invoke(_dmg);
             _idleCD?.Invoke(true);
         }
         _root.Execute();
     }
 
-    private void ResetCD()
+    private void ResetCd()
     {
         _counter = Time.time + _attackCd;
     }

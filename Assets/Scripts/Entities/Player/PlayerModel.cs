@@ -16,7 +16,10 @@ public class PlayerModel : Actor
     [SerializeField] private float attackRadius;
     [SerializeField] private LayerMask enemyMask;
 
+    public event Action OnDead;
     public event Action<int> OnHit;
+
+    private bool isAlive;
 
     private bool isFacingRight;//Checks where is facing
     private bool isJumping;//Checks if it already jumping
@@ -26,8 +29,8 @@ public class PlayerModel : Actor
     private void Awake()
     {
         BakeReferences();
-        
-        
+
+        isAlive = true;
         isFacingRight = true;
         isJumping = false;
     }
@@ -114,6 +117,7 @@ public class PlayerModel : Actor
 
     public override void Die()
     {
+        isAlive = false;
         _view.DeadAnimation();
     }
 
@@ -160,6 +164,16 @@ public class PlayerModel : Actor
     {
         Gizmos.color= Color.red;
         Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
+    }
+
+    public void RealDead()
+    {
+        OnDead?.Invoke();
+    }
+
+    public bool GetIsAlive()
+    {
+        return isAlive;
     }
 }
 //TODO arreglar que el hit tambien lo informe el controller

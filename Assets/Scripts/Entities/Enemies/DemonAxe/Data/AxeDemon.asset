@@ -16,6 +16,6 @@ MonoBehaviour:
   runSpeed: 3
   groundDistance: 0.2
   damage: 20
-  attackCooldown: 10
+  attackCooldown: 2
   attackDist: 3
   maxLife: 40

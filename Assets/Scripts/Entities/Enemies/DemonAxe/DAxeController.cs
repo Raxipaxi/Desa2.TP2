@@ -74,8 +74,9 @@ public class DAxeController : MonoBehaviour
         QuestionNode isInReach = new QuestionNode(CanAttack, goToAttack, goToRun);
         QuestionNode isPlayerOnSight = new QuestionNode(CanSeeTheTarget, isInReach, goToPatrol);
         QuestionNode isIdleTime = new QuestionNode(IsIdleCD, goToIdle, isPlayerOnSight);
+        QuestionNode isPlayerAlive = new QuestionNode(IsPlayerAlive, isIdleTime, goToPatrol);
         
-        _root = isIdleTime;
+        _root = isPlayerAlive;
     }
 
     void InitFSM()
@@ -152,7 +153,7 @@ public class DAxeController : MonoBehaviour
     public void DieCommand()
     {
         OnDie?.Invoke();
-        Debug.Log("morimo no?");
+        // Debug.Log("morimo no?");
         _fsm.Transition(DAxeStatesEnum.Dead);
 
     }
@@ -160,7 +161,7 @@ public class DAxeController : MonoBehaviour
     public  void DestroyEnemy()
     { 
       
-      Debug.Log("morimo?");
+      // Debug.Log("morimo?");
       isDead = true;
       GetComponent<Collider2D>().enabled = false;
       GetComponent<Rigidbody2D>().isKinematic = true;
@@ -191,6 +192,12 @@ public class DAxeController : MonoBehaviour
     public void SetIdleCDOn(bool idleState)
     {
         _isInIdle = idleState;
+    }
+
+    public bool IsPlayerAlive()
+    {
+        var isalive = _player.GetIsAlive();
+        return isalive;
     }
     public bool IsIdleCD()
     {

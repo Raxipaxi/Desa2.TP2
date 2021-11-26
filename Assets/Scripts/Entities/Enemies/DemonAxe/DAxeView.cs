@@ -43,7 +43,7 @@ public class DAxeView : MonoBehaviour
 
     public void AttackAnimation(int blah)
     {
-        Debug.Log("holis");
+        // Debug.Log("holis");
         _animator.Play("DemonAttack");
     }
 

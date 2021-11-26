@@ -55,7 +55,7 @@ public class DAxeModel : Actor
     public override void TakeDamage(int damage)
     {
         _currLife -= damage;
-        Debug.LogWarning("Me hicieron nana " + damage);
+        // Debug.LogWarning("Me hicieron nana " + damage);
         OnHit?.Invoke();
         if (_currLife<=0)
         {
@@ -115,10 +115,14 @@ public class DAxeModel : Actor
     private void PlayerHitCheck()
     {
         var hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius,playerMask); //  nonallocate masmejor
-      //  OnDrawGizmo();
-        var player =  hit.GetComponent<IDamageable>();
+
+        if (hit!=null)
+        {
+            var player =  hit.GetComponent<IDamageable>();
         
-        player?.TakeDamage(data.damage);
+            player?.TakeDamage(data.damage);
+        }
+
     }
     private void OnDrawGizmo()
     {

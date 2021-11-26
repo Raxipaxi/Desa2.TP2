@@ -14,7 +14,7 @@ public class DAxeDeadState<T> : State<T>
 
     public override void Execute()
     {
-        Debug.Log("MORIIII");
+        // Debug.Log("MORIIII");
 
        _onDieBrain?.Invoke();
     }
