@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
 
     private FSM<PlayerStatesEnum> _fsm;
     private PlayerModel _playerModel;
+    private PlayerView _playerView;
+    [SerializeField]private LifeUIManager _lifeUI;
+    private PlayerLifeController _playerLifeController;
     private iInput _playerInput;
 
     #region Actions
@@ -15,20 +18,30 @@ public class PlayerController : MonoBehaviour
     public event Action OnFall;
     public event Action OnLand;
     public event Action OnIdle;
+    public event Action OnDie;
+    public event Action<int> OnHit;
     #endregion
     
     
     private void Awake()
     {
         _playerModel = GetComponent<PlayerModel>();
-        _playerModel.SubscribeEvents(this);
         _playerInput = GetComponent<iInput>();
+        _playerView = GetComponent<PlayerView>();
+        _playerLifeController = GetComponent<PlayerLifeController>();
+        _lifeUI.Subscribe(this);
+        _playerModel.SubscribeEvents(this);
+        _playerView.SubscribeEvents(this);
+        _playerLifeController.Subscribe(this);
+
         SubscribeEvents();
         
         FsmInit();
+
     }
-    
-    
+
+
+
     private void FsmInit()
     {
         //--------------- FSM Creation -------------------//                
@@ -37,35 +50,51 @@ public class PlayerController : MonoBehaviour
         var jump = new PlayerJumpState<PlayerStatesEnum>(PlayerStatesEnum.Fall, PlayerStatesEnum.Idle,JumpCommand,CheckJumpPlayer);
         var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,_playerInput,CheckGroundPlayer,FallCommand, MoveCommand);
         var land = new PlayerLandState<PlayerStatesEnum>(PlayerStatesEnum.Idle, LandCommand);
+        var hit = new PlayerHitState<PlayerStatesEnum>(PlayerStatesEnum.Idle);
         var attack = new PlayerAttackState<PlayerStatesEnum>(PlayerStatesEnum.Idle,PlayerStatesEnum.Run,AttackCommand,_playerModel.data.damage,_playerInput);
+        var dead = new PlayerDeadState<PlayerStatesEnum>(DieCommand);
 
         // Idle State
         idle.AddTransition(PlayerStatesEnum.Run, run);
         idle.AddTransition(PlayerStatesEnum.Jump,jump);
         idle.AddTransition(PlayerStatesEnum.Fall,fall);
         idle.AddTransition(PlayerStatesEnum.Attack, attack);
-        
+        idle.AddTransition(PlayerStatesEnum.Hit, hit);
+        idle.AddTransition(PlayerStatesEnum.Dead, dead);
+
         // Run State
         run.AddTransition(PlayerStatesEnum.Idle, idle);
         run.AddTransition(PlayerStatesEnum.Fall,fall);
         run.AddTransition(PlayerStatesEnum.Jump,jump);
         run.AddTransition(PlayerStatesEnum.Attack,attack);
+        run.AddTransition(PlayerStatesEnum.Hit, hit);
+        run.AddTransition(PlayerStatesEnum.Dead, dead);
         
         // Jump State
        jump.AddTransition(PlayerStatesEnum.Fall,fall);
        jump.AddTransition(PlayerStatesEnum.Idle,idle);
+       jump.AddTransition(PlayerStatesEnum.Hit, hit);
+       jump.AddTransition(PlayerStatesEnum.Dead, dead);
         
         // Fall State
         fall.AddTransition(PlayerStatesEnum.Land,land);
+        fall.AddTransition(PlayerStatesEnum.Hit, hit);
+        fall.AddTransition(PlayerStatesEnum.Dead, dead);
         
         // Land State
         land.AddTransition(PlayerStatesEnum.Idle,idle);
+        land.AddTransition(PlayerStatesEnum.Hit, hit);
+        land.AddTransition(PlayerStatesEnum.Dead, dead);
       
         // Attack State
         attack.AddTransition(PlayerStatesEnum.Idle,idle);
         attack.AddTransition(PlayerStatesEnum.Run,run);
+        attack.AddTransition(PlayerStatesEnum.Hit, hit);
+        attack.AddTransition(PlayerStatesEnum.Dead, dead);
         
-        
+        // Hit State
+        hit.AddTransition(PlayerStatesEnum.Idle,idle);
+        hit.AddTransition(PlayerStatesEnum.Dead, dead);
         
 
         _fsm = new FSM<PlayerStatesEnum>();
@@ -116,8 +145,19 @@ public class PlayerController : MonoBehaviour
         OnFall?.Invoke();
     }
 
-    public void DeadBrain()
+    public void HitCommand(int damage)
     {
+        _fsm.Transition(PlayerStatesEnum.Hit);
+        OnHit?.Invoke(damage);   
+    }
+
+    public void DieCommand()
+    {
+        OnDie?.Invoke();
+        
+       // _fsm.Transition(PlayerStatesEnum.Dead);
+    }
+    public void DeadBrain(){
         _fsm.Transition(PlayerStatesEnum.Dead);
     }
     #endregion
@@ -132,7 +172,8 @@ public class PlayerController : MonoBehaviour
 
     void SubscribeEvents()
     {
-        
+        _playerModel.OnHit += HitCommand;
+        _playerLifeController.OnDie += DieCommand;
     }
     
 }

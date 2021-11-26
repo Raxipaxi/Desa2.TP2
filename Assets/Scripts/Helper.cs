@@ -7,6 +7,7 @@
     Fall,
     Land,
     Dead,
+    Hit,
     Heal,
     Damage
 }

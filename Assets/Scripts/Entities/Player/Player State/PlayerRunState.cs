@@ -32,7 +32,8 @@ public class PlayerRunState<T> : State<T>
         if (_playerInput.IsRunning())
         {
             if (_checkGround())
-            {
+            { 
+                Debug.Log("Corro");
                 Vector2 dir = new Vector2(h,0);
                 _onMove?.Invoke(dir);
             }

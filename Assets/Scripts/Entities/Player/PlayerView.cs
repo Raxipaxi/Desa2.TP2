@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,15 +13,20 @@ public class PlayerView : MonoBehaviour
         _playerAnimator = GetComponent<Animator>();
     }
 
+    public void SubscribeEvents(PlayerController controller)
+    {
+        controller.OnHit += HitAnimation;
+    }
+
     public void RunAnimation(float dir)
     {
         _playerAnimator.SetFloat(PlayerAnimParameters.RunDir,dir);
         _playerAnimator.SetBool(PlayerAnimParameters.IsRunning,true);
     }
 
-    public void HitAnimation()
+    public void HitAnimation(int damage)
     {
-        _playerAnimator.Play("Hitted");
+        _playerAnimator.Play("Player_Hit");
     }
     
     public void IdleAnimation()
@@ -43,6 +49,11 @@ public class PlayerView : MonoBehaviour
     {
         _playerAnimator.SetBool(PlayerAnimParameters.OnAir,false);
         _playerAnimator.SetBool(PlayerAnimParameters.IsTouchingGround,true);
+    }
+
+    public void DeadAnimation()
+    {
+        _playerAnimator.Play("Player_Dead");
     }
 
     public void Attack(float vel)

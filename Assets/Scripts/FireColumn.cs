@@ -14,7 +14,7 @@ public class FireColumn : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
     
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
      {
          var player = collision.GetComponent<IDamageable>();
          player?.TakeDamage(_fireDmg);

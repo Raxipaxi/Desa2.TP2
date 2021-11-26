@@ -19,10 +19,8 @@ public class PlayerInput : MonoBehaviour, iInput
     {
         _joyInput = new PlayerInputJoy();
         _joyInput.GamePlay.Jump.performed += ctx => IsJumping();
-        _joyInput.GamePlay.Move.performed += ctx=>  currX = ctx.ReadValue<float>();
+        _joyInput.GamePlay.Move.started += ctx=>  currX = ctx.ReadValue<float>();
         _joyInput.GamePlay.Move.canceled += ctx => currX = 0f;
-
-
     }
 
     public bool IsRunning()
@@ -42,14 +40,11 @@ public class PlayerInput : MonoBehaviour, iInput
 
     public void UpdateInputs()
     {
-        if (currX == 0) {_xAxis = 0;return;}
-        
-        if (currX > 0) { _xAxis = 1; return;}
-        if (currX < 0) { _xAxis = -1;}
-        
-        
+        if (currX == 0f) {_xAxis = 0f;return;}
 
-
+        _xAxis = currX > 0 ? 1f : -1f;
+        // if (currX > 0) { _xAxis = 1; return;}
+        // if (currX < 0) { _xAxis = -1;}
 
     }
 

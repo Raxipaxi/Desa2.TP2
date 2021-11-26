@@ -16,7 +16,8 @@ public class PlayerModel : Actor
     [SerializeField] private float attackRadius;
     [SerializeField] private LayerMask enemyMask;
 
-    
+    public event Action<int> OnHit;
+
     private bool isFacingRight;//Checks where is facing
     private bool isJumping;//Checks if it already jumping
     
@@ -46,6 +47,7 @@ public class PlayerModel : Actor
         controller.OnLand   += Land;
         controller.OnFall   += Fall;
         controller.OnIdle   += Idle;
+        controller.OnDie   += Die;
     }
 
     public override void Idle()
@@ -63,7 +65,7 @@ public class PlayerModel : Actor
         if (!isOnGround) finalSpeed -= data.speedFallPenalty;
         
         var currDir = new Vector2(dir.x * finalSpeed,VelY);
-        
+
         _rb.velocity = currDir;
         
         if (isFacingRight && dir.x<0)
@@ -112,7 +114,7 @@ public class PlayerModel : Actor
 
     public override void Die()
     {
-        base.Die();
+        _view.DeadAnimation();
     }
 
     public void Fall()
@@ -146,7 +148,12 @@ public class PlayerModel : Actor
         if(hit==null) return null;
         return hit.GetComponent<IDamageable>();
     }
-    
+
+    public override void TakeDamage(int damage)
+    {
+        OnHit?.Invoke(damage);
+    }
+
     #endregion
 
     private void OnDrawGizmosSelected()
@@ -155,3 +162,4 @@ public class PlayerModel : Actor
         Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
     }
 }
+//TODO arreglar que el hit tambien lo informe el controller

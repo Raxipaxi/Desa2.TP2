@@ -2,11 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc10c66-34c3-430c-98ea-df313a8ee755" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/AmbienMusic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AmbienMusic.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Dead.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Dead.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/BackgroundMusic.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/BackgroundMusic/Castlevania SOTN_ Wood Carving Partita.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/BackgroundMusic/Castlevania SOTN_ Wood Carving Partita.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerDeadState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerDeadState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerLifeController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerLifeController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LifeUIManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LifeUIManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Death.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/_Death.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeStates/DAxePatrolState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeStates/DAxePatrolState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAttack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAttack.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Feedbacks/Hitted.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Feedbacks/Hitted.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Feedbacks/PlayerHitFeedback.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Feedbacks/PlayerHitFeedback.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Castlevania SOTN_ Wood Carving Partita.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audio/Castlevania SOTN_ Wood Carving Partita.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Data/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Data/PlayerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerHitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerHitState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerRunState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerRunState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInput.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/FireColumn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FireColumn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +59,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cfc1ad890650411e946cff2e6f27671113b400/9b/3c2bc6e3/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.0.2/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/ad/8d380f75/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AmbienMusic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Steerings/LineOfSight/LineOfSightAI2D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Slider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LifeUIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@1.0.0/Editor/GridPaintPaletteClipboard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Steerings/ObstacleAvoidance/ObstacleAvoidance2D.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -110,7 +141,8 @@
       <workItem from="1637671856255" duration="21541000" />
       <workItem from="1637720595909" duration="491000" />
       <workItem from="1637769816821" duration="8850000" />
-      <workItem from="1637788478611" duration="5344000" />
+      <workItem from="1637788478611" duration="6121000" />
+      <workItem from="1637878839662" duration="13578000" />
     </task>
     <task id="LOCAL-00001" summary="DemonAxe Added">
       <created>1635979042829</created>
