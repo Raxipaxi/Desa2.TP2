@@ -2,99 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc10c66-34c3-430c-98ea-df313a8ee755" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/GameOverScreen.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/GameOverScreen/GameOver.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/GameOverScreen/GameOver.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/GameOverScreen/GameOver.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/GameOverScreen/GameOver.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/WinScreen.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/WinScreen/WinScreen.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/WinScreen/WinScreen.anim.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/WinScreen/WinScreen.controller" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/WinScreen/WinScreen.controller.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GoalReached.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GoalReached.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export10.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export11.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export12.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export13.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export14.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export15.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export16.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export17.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export18.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export19.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export20.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export21.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export22.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export23.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export4.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export5.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export6.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export7.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export8.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/GameOver-export9.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen3.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen4.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen5.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen6.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen7.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen8.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Screens/WinScreen9.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/Sounds.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/FireRise.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/FireRise.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Grunt.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/Grunt.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/SwordAttack.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Audio/Sounds/SwordAttack.wav.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAttack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAttack.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAxe.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAxe.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Dead.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Dead.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Traps/FireColumn/Rise.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Traps/FireColumn/Rise.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DAxeView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/Data/AxeDemon.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/Data/AxeDemon.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeStates/DAxeAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeStates/DAxeAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeStates/DAxeDeadState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Enemies/DemonAxe/DemonAxeStates/DAxeDeadState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerLifeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerLifeController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/145dd02dbaa43b6ad940451584b07b02.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/145dd02dbaa43b6ad940451584b07b02.gif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/FireColumn.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/FireColumn.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +127,8 @@
       <workItem from="1637788478611" duration="6121000" />
       <workItem from="1637878839662" duration="13820000" />
       <workItem from="1637904654624" duration="1008000" />
-      <workItem from="1637927687241" duration="13929000" />
+      <workItem from="1637927687241" duration="17326000" />
+      <workItem from="1637959240628" duration="1160000" />
     </task>
     <task id="LOCAL-00001" summary="DemonAxe Added">
       <created>1635979042829</created>

@@ -17,8 +17,14 @@ public class FireColumn : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
      {
          var player = collision.GetComponent<IDamageable>();
+         
          player?.TakeDamage(_fireDmg);
 
      }
+
+    void MakeSound()
+    {
+       // AudioManager.instance.PlayTrapSound(TrapSoundsClip.FireRise);
+    }
     
 }

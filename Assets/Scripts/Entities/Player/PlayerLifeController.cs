@@ -33,6 +33,7 @@ public class PlayerLifeController : MonoBehaviour
         _screenFeedback.Play("Hitted");
         
         _currLife -= damage;
+        AudioManager.instance.PlayPlayerSound(PlayerSoundClips.Grunt);
         
         if (_currLife<=0) {OnDie?.Invoke(); return; }
     }

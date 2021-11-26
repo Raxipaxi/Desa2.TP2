@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerModel : Actor
 {
     #region Position/Physics
-
+    
     private Transform _transform;
     private Rigidbody2D _rb;
     private float VelY => _rb.velocity.y;
@@ -90,6 +90,7 @@ public class PlayerModel : Actor
         var moving = _rb.velocity.x;
         
         _view.Attack(moving);
+        AudioManager.instance.PlayPlayerSound(PlayerSoundClips.Attack);
         EnemyHitCheck()?.TakeDamage(data.damage*dmgModifier);
     }
    
@@ -117,6 +118,7 @@ public class PlayerModel : Actor
 
     public override void Die()
     {
+        AudioManager.instance.PlayPlayerSound(PlayerSoundClips.Grunt);
         isAlive = false;
         _view.DeadAnimation();
     }
