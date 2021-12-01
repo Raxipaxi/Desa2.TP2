@@ -214,6 +214,7 @@ MonoBehaviour:
   _seen: 1
   _player: {fileID: 0}
   _minDistance: 1
+  isDead: 0
   _idleCD: 1
   waypoints:
   - {fileID: 0}

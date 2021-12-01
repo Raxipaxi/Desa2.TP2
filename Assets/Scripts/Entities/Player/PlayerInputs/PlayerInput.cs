@@ -43,9 +43,6 @@ public class PlayerInput : MonoBehaviour, iInput
         if (currX == 0f) {_xAxis = 0f;return;}
 
         _xAxis = currX > 0 ? 1f : -1f;
-        // if (currX > 0) { _xAxis = 1; return;}
-        // if (currX < 0) { _xAxis = -1;}
-
     }
 
     private void OnEnable()
