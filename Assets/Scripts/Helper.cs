@@ -8,6 +8,7 @@
     Land,
     Dead,
     Hit,
+    Crouch,
     Heal,
     Damage
 }

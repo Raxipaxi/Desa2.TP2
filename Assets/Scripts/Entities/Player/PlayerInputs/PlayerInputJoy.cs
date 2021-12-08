@@ -24,7 +24,7 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""id"": ""56527cda-1143-4bd0-97c3-5a71e6a816e3"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""Move"",
@@ -32,7 +32,7 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""id"": ""3367f008-c29f-4bfd-97a1-fd90769193a0"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
-                    ""interactions"": ""Hold""
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""Jump"",
@@ -40,7 +40,7 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""id"": ""e63f364d-ccce-495b-9c94-5153749c4846"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""Crouch"",
@@ -48,15 +48,15 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""id"": ""24c3eb21-7b61-49bb-be66-10b93f817d24"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""c57b766c-bdfb-46d3-b549-87b1b517fbff"",
-                    ""path"": ""<XInputController>/buttonWest"",
-                    ""interactions"": ""Press"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Attack"",
@@ -67,7 +67,7 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""12102975-a05c-41ac-990d-8e069436129c"",
                     ""path"": ""<Keyboard>/z"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Attack"",
@@ -77,8 +77,8 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e56098a4-78c8-44db-9347-4968094d7945"",
-                    ""path"": ""<XInputController>/leftStick/x"",
-                    ""interactions"": ""Press"",
+                    ""path"": ""<Gamepad>/leftStick/x"",
+                    ""interactions"": """",
                     ""processors"": ""Normalize(min=-1,max=1)"",
                     ""groups"": """",
                     ""action"": ""Move"",
@@ -88,8 +88,8 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5bb7f58c-8b25-4bcc-84d4-d2534e1aa3e7"",
-                    ""path"": ""<XInputController>/dpad/x"",
-                    ""interactions"": ""Press"",
+                    ""path"": ""<Gamepad>/dpad/x"",
+                    ""interactions"": """",
                     ""processors"": ""Normalize(min=-1,max=1)"",
                     ""groups"": """",
                     ""action"": ""Move"",
@@ -100,7 +100,7 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""18305266-a8c4-416d-ac7f-28d38e39561f"",
                     ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": ""Normalize(max=-1)"",
                     ""groups"": """",
                     ""action"": ""Move"",
@@ -111,7 +111,7 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""98a3d871-b849-41c5-8f4e-9551be32b654"",
                     ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": ""Normalize(max=1)"",
                     ""groups"": """",
                     ""action"": ""Move"",
@@ -121,8 +121,8 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f110eb05-8714-4012-98dc-3e5bfbb7efbd"",
-                    ""path"": ""<XInputController>/buttonSouth"",
-                    ""interactions"": ""Press"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
@@ -144,7 +144,18 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""89968bca-875a-42c7-8e5f-e49c2efc833d"",
                     ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f8c0dcf-2c15-4f32-adad-1c1937362c97"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Crouch"",

@@ -15,18 +15,28 @@ public class PlayerInput : MonoBehaviour, iInput
     private float currX;
     #endregion
 
+    //private bool isCrouched;
+
     private void Awake()
     {
         _joyInput = new PlayerInputJoy();
-        _joyInput.GamePlay.Jump.performed += ctx => IsJumping();
+       // _joyInput.GamePlay.Jump.performed += ctx => IsJumping();
         _joyInput.GamePlay.Move.started += ctx=>  currX = ctx.ReadValue<float>();
         _joyInput.GamePlay.Move.canceled += ctx => currX = 0f;
+        _joyInput.GamePlay.Crouch.started += ctx => IsCrouched(true);
+        _joyInput.GamePlay.Crouch.canceled += ctx => IsCrouched(false);
     }
 
     public bool IsRunning()
     {
         return (GetH != 0); 
     }
+
+    public bool IsCrouched(bool crouch)
+    {
+        return crouch;
+    }
+    
 
     public bool IsAttacking()
     {

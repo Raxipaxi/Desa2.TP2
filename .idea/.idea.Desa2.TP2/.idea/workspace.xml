@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc10c66-34c3-430c-98ea-df313a8ee755" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Pixel2DCastle1.1/ground.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Pixel2DCastle1.1/ground.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Tile Palettes/Floor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Floor.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Crouch.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Crouch.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_CrouchWalk.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_CrouchWalk.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_StandUp.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_StandUp.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerCrouchState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerCrouchState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInputJoy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInputJoy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInputJoy.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInputJoy.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Helper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchFull.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchFull.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchWalk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchWalk.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +138,7 @@
       <workItem from="1638203550423" duration="608000" />
       <workItem from="1638224280806" duration="496000" />
       <workItem from="1638563898190" duration="594000" />
+      <workItem from="1638805816161" duration="2502000" />
     </task>
     <task id="LOCAL-00001" summary="DemonAxe Added">
       <created>1635979042829</created>
