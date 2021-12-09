@@ -12,13 +12,15 @@ public class PlayerController : MonoBehaviour
     private iInput _playerInput;
 
     #region Actions
-    public event Action<int> OnAttack;
-    public event Action<Vector2> OnMove;
+    public event Action<int> OnAttack, OnCrouchAttack;
+    public event Action<Vector2> OnMove, OnCrouchMove;
     public event Action OnJump;
     public event Action OnFall;
     public event Action OnLand;
     public event Action OnIdle;
     public event Action OnDie;
+
+    public event Action OnCrouch;
     public event Action<int> OnHit;
     #endregion
     
@@ -151,6 +153,15 @@ public class PlayerController : MonoBehaviour
         OnHit?.Invoke(damage);   
     }
 
+    public void CrouchCommand()
+    {
+        OnCrouch?.Invoke();
+    }
+    public void CrouchAttackCommand(int dmg)
+    {
+        OnCrouchAttack?.Invoke(dmg);
+    }
+    
     public void DieCommand()
     {
         OnDie?.Invoke();

@@ -39,6 +39,7 @@ public class PlayerRunState<T> : State<T>
            else 
            {
                _fsm.Transition(_inputFall);
+               return;
            }
         }
 

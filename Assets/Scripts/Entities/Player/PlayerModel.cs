@@ -21,6 +21,8 @@ public class PlayerModel : Actor
 
     private bool isAlive;
 
+    private bool isCrouched;
+
     private bool isFacingRight;//Checks where is facing
     private bool isJumping;//Checks if it already jumping
     
@@ -33,6 +35,7 @@ public class PlayerModel : Actor
         isAlive = true;
         isFacingRight = true;
         isJumping = false;
+        isCrouched = false;
     }
 
     void BakeReferences()
@@ -62,7 +65,7 @@ public class PlayerModel : Actor
 
     public override void Move(Vector2 dir)
     {
-        bool isOnGround = !IsJumping() && CheckIfGrounded();
+        bool isOnGround = !IsJumping() && CheckIfGrounded() && !isCrouched;
         var finalSpeed = data.walkSpeed;
         
         if (!isOnGround) finalSpeed -= data.speedFallPenalty;
@@ -83,6 +86,22 @@ public class PlayerModel : Actor
         {
            _view.RunAnimation(currDir.normalized.x);
         }
+
+        if (isCrouched)
+        {
+            
+        }
+        
+    }
+
+    public void Crouch(bool iscrouch)
+    {
+        isCrouched = iscrouch;
+        if (isCrouched)
+        {
+            _view.CrouchAnimation();
+        }
+        
     }
 
     public override void Attack(int dmgModifier)
