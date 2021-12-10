@@ -9,6 +9,8 @@ public class PlayerModel : Actor
     private Rigidbody2D _rb;
     private float VelY => _rb.velocity.y;
     private PlayerView _view;
+
+    [SerializeField] private ParticleSystem jumpDust;
     
     [SerializeField]public PlayerData data;
 
@@ -135,6 +137,8 @@ public class PlayerModel : Actor
             _rb.velocity = new Vector2(_rb.velocity.x, 0f);
             var jumpForce = data.jumpHeight * transform.up;
             _rb.AddForce(jumpForce, ForceMode2D.Impulse);
+            CreateDust();
+           
         }
         _view.JumpAnimation();
     }
@@ -199,6 +203,11 @@ public class PlayerModel : Actor
     public bool GetIsAlive()
     {
         return isAlive;
+    }
+
+    void CreateDust()
+    {
+        jumpDust.Play();
     }
 }
 //TODO arreglar que el hit tambien lo informe el controller
