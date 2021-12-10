@@ -9,7 +9,7 @@ public class DAxeModel : Actor
     #region Properties
 
     [SerializeField] public EnemyData data;
-    
+    [SerializeField] private ParticleSystem bloodSplash;
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float attackRadius;
     [SerializeField] private LayerMask playerMask;
@@ -57,6 +57,7 @@ public class DAxeModel : Actor
         _currLife -= damage;
         // Debug.LogWarning("Me hicieron nana " + damage);
         OnHit?.Invoke();
+        bloodSplash.Play();
         if (_currLife<=0)
         {
             Die();

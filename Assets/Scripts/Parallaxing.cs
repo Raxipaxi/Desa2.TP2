@@ -40,7 +40,7 @@ public class Parallaxing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var newPos = startPos + Travel * ParallaxFactor;
+        var newPos = startPos + Travel * ParallaxFactor * 0.5f;
         _transform.position = new Vector3(newPos.x, _startY, _startZ);
     }
 }
