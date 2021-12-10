@@ -65,12 +65,16 @@ public class PlayerModel : Actor
 
     public override void Move(Vector2 dir)
     {
-        bool isOnGround = !IsJumping() && CheckIfGrounded() && !isCrouched;
+        Debug.Log("is crouched " + isCrouched);
+        bool isOnGround = !IsJumping() && CheckIfGrounded();// && !isCrouched;
+        Debug.Log("isonGround " + isOnGround);
         var finalSpeed = data.walkSpeed;
         
         if (!isOnGround) finalSpeed -= data.speedFallPenalty;
         
         var currDir = new Vector2(dir.x * finalSpeed,VelY);
+        
+        Debug.Log("Me muevo");
 
         _rb.velocity = currDir;
         
