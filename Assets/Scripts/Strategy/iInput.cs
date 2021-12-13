@@ -6,5 +6,6 @@ public interface iInput
     bool IsRunning();
     bool IsAttacking();
     bool IsJumping();
+    bool IsCrouched();
     void UpdateInputs();
 }

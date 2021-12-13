@@ -13,6 +13,7 @@ public class PlayerInput : MonoBehaviour, iInput
     float _xAxis;
     float _yAxis;
     private float currX;
+    private bool _crouch;
     #endregion
 
     //private bool isCrouched;
@@ -23,8 +24,8 @@ public class PlayerInput : MonoBehaviour, iInput
        // _joyInput.GamePlay.Jump.performed += ctx => IsJumping();
         _joyInput.GamePlay.Move.started += ctx=>  currX = ctx.ReadValue<float>();
         _joyInput.GamePlay.Move.canceled += ctx => currX = 0f;
-        _joyInput.GamePlay.Crouch.started += ctx => IsCrouched(true);
-        _joyInput.GamePlay.Crouch.canceled += ctx => IsCrouched(false);
+        _joyInput.GamePlay.Crouch.started += ctx => Crouched(true);
+        _joyInput.GamePlay.Crouch.canceled += ctx => Crouched(false);
     }
 
     public bool IsRunning()
@@ -32,11 +33,15 @@ public class PlayerInput : MonoBehaviour, iInput
         return (GetH != 0); 
     }
 
-    public bool IsCrouched(bool crouch)
+    private void Crouched(bool crouch)
     {
-        return crouch;
+        Debug.Log(crouch);
+        _crouch = crouch;
     }
-    
+    public bool IsCrouched()
+    {
+        return _crouch;
+    }
 
     public bool IsAttacking()
     {

@@ -6,13 +6,13 @@ using UnityEngine;
 public class PlayerView : MonoBehaviour
 {
     private Animator _playerAnimator;
-    private bool _isCrouched;
+    private bool _isCrouched => _playerAnimator.GetBool(PlayerAnimParameters.IsCrouched);
     
 
     void Awake()
     {
         _playerAnimator = GetComponent<Animator>();
-        _isCrouched = false;
+    
     }
 
     public void SubscribeEvents(PlayerController controller)
@@ -27,8 +27,8 @@ public class PlayerView : MonoBehaviour
     }    
     public void CrouchAnimation()
     {
-        _isCrouched = !_isCrouched;
-        _playerAnimator.SetBool(PlayerAnimParameters.IsCrouched,_isCrouched);
+        _playerAnimator.SetBool(PlayerAnimParameters.IsCrouched,true);
+        _playerAnimator.SetBool(PlayerAnimParameters.IsRunning,false);
     }
 
     public void HitAnimation(int damage)
@@ -38,7 +38,9 @@ public class PlayerView : MonoBehaviour
     
     public void IdleAnimation()
     {
+        
         _playerAnimator.SetBool(PlayerAnimParameters.IsRunning,false);
+        _playerAnimator.SetBool(PlayerAnimParameters.IsCrouched,false);
     }
 
     public void JumpAnimation()
@@ -60,7 +62,9 @@ public class PlayerView : MonoBehaviour
 
     public void DeadAnimation()
     {
-        _playerAnimator.Play("Player_Dead");
+
+            _playerAnimator.Play("Player_Dead");
+      
     }
 
     public void Attack(float vel)
@@ -75,9 +79,12 @@ public class PlayerView : MonoBehaviour
             {
                 _playerAnimator.Play("AttackMoving");
             }
+
+            return;
         }
- 
         
+        _playerAnimator.Play("Player_CrouchAttack");
+
     }
 
 }

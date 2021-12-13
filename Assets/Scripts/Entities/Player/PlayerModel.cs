@@ -56,6 +56,7 @@ public class PlayerModel : Actor
         controller.OnFall   += Fall;
         controller.OnIdle   += Idle;
         controller.OnDie   += Die;
+        controller.OnCrouch += Crouch;
     }
 
     public override void Idle()
@@ -66,7 +67,8 @@ public class PlayerModel : Actor
     }
 
     public override void Move(Vector2 dir)
-    {        bool isOnGround = !IsJumping() && CheckIfGrounded() && !isCrouched;
+    {   
+        bool isOnGround = !IsJumping() && CheckIfGrounded();
 
         var finalSpeed = data.walkSpeed;
         
@@ -89,11 +91,6 @@ public class PlayerModel : Actor
            _view.RunAnimation(currDir.normalized.x);
         }
 
-        if (isCrouched)
-        {
-            
-        }
-        
     }
 
     public void Crouch(bool iscrouch)
@@ -101,6 +98,7 @@ public class PlayerModel : Actor
         isCrouched = iscrouch;
         if (isCrouched)
         {
+            _rb.velocity = Vector2.zero;
             _view.CrouchAnimation();
         }
         

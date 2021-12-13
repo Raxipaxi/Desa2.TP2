@@ -44,9 +44,9 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Crouch"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""24c3eb21-7b61-49bb-be66-10b93f817d24"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": ""Press""
                 }
@@ -145,7 +145,7 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""id"": ""89968bca-875a-42c7-8e5f-e49c2efc833d"",
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Normalize(min=0.5,max=1)"",
                     ""groups"": """",
                     ""action"": ""Crouch"",
                     ""isComposite"": false,
@@ -156,7 +156,7 @@ public class @PlayerInputJoy : IInputActionCollection, IDisposable
                     ""id"": ""4f8c0dcf-2c15-4f32-adad-1c1937362c97"",
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Normalize(min=0.5,max=1)"",
                     ""groups"": """",
                     ""action"": ""Crouch"",
                     ""isComposite"": false,

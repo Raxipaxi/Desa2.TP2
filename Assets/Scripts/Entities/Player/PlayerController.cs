@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private LifeUIManager _lifeUI;
     private PlayerLifeController _playerLifeController;
     private iInput _playerInput;
-
+    private bool isCrouch;
+    
     #region Actions
     public event Action<int> OnAttack, OnCrouchAttack;
     public event Action<Vector2> OnMove, OnCrouchMove;
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public event Action OnIdle;
     public event Action OnDie;
 
-    public event Action OnCrouch;
+    public event Action<bool> OnCrouch;
     public event Action<int> OnHit;
     #endregion
     
@@ -36,21 +37,22 @@ public class PlayerController : MonoBehaviour
         _playerView.SubscribeEvents(this);
         _playerLifeController.Subscribe(this);
 
+        isCrouch = false;
+
         SubscribeEvents();
         
         FsmInit();
 
     }
 
-
-
     private void FsmInit()
     {
         //--------------- FSM Creation -------------------//                
-        var idle = new PlayerIdleState<PlayerStatesEnum>(CheckGroundPlayer,CheckJumpPlayer,IdleCommand, PlayerStatesEnum.Run,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,PlayerStatesEnum.Jump,_playerInput );
+        var idle = new PlayerIdleState<PlayerStatesEnum>(CheckGroundPlayer,CheckJumpPlayer,IdleCommand, PlayerStatesEnum.Run,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,PlayerStatesEnum.Crouch,PlayerStatesEnum.Jump,_playerInput );
         var run = new PlayerRunState<PlayerStatesEnum>(CheckGroundPlayer,CheckJumpPlayer, PlayerStatesEnum.Idle, PlayerStatesEnum.Jump,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,_playerInput,MoveCommand);
         var jump = new PlayerJumpState<PlayerStatesEnum>(PlayerStatesEnum.Fall, PlayerStatesEnum.Idle,JumpCommand,CheckJumpPlayer);
         var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,_playerInput,CheckGroundPlayer,FallCommand, MoveCommand);
+        var crouch = new PlayerCrouchState<PlayerStatesEnum>(CheckGroundPlayer, PlayerStatesEnum.Attack,PlayerStatesEnum.Idle, PlayerStatesEnum.Fall,_playerInput,MoveCommand ,CrouchCommand);
         var land = new PlayerLandState<PlayerStatesEnum>(PlayerStatesEnum.Idle, LandCommand);
         var hit = new PlayerHitState<PlayerStatesEnum>(PlayerStatesEnum.Idle);
         var attack = new PlayerAttackState<PlayerStatesEnum>(PlayerStatesEnum.Idle,PlayerStatesEnum.Run,AttackCommand,1,_playerInput);
@@ -62,14 +64,24 @@ public class PlayerController : MonoBehaviour
         idle.AddTransition(PlayerStatesEnum.Fall,fall);
         idle.AddTransition(PlayerStatesEnum.Attack, attack);
         idle.AddTransition(PlayerStatesEnum.Hit, hit);
+        idle.AddTransition(PlayerStatesEnum.Crouch, crouch);
         idle.AddTransition(PlayerStatesEnum.Dead, dead);
 
+        // Idle State
+        crouch.AddTransition(PlayerStatesEnum.Run, run);
+        crouch.AddTransition(PlayerStatesEnum.Fall,fall);
+        crouch.AddTransition(PlayerStatesEnum.Attack, attack);
+        crouch.AddTransition(PlayerStatesEnum.Hit, hit);
+        crouch.AddTransition(PlayerStatesEnum.Idle, idle);
+        crouch.AddTransition(PlayerStatesEnum.Dead, dead);
+        
         // Run State
         run.AddTransition(PlayerStatesEnum.Idle, idle);
         run.AddTransition(PlayerStatesEnum.Fall,fall);
         run.AddTransition(PlayerStatesEnum.Jump,jump);
         run.AddTransition(PlayerStatesEnum.Attack,attack);
         run.AddTransition(PlayerStatesEnum.Hit, hit);
+        run.AddTransition(PlayerStatesEnum.Crouch, crouch);
         run.AddTransition(PlayerStatesEnum.Dead, dead);
         
         // Jump State
@@ -91,6 +103,7 @@ public class PlayerController : MonoBehaviour
         // Attack State
         attack.AddTransition(PlayerStatesEnum.Idle,idle);
         attack.AddTransition(PlayerStatesEnum.Run,run);
+        attack.AddTransition(PlayerStatesEnum.Crouch, crouch);
         attack.AddTransition(PlayerStatesEnum.Hit, hit);
         attack.AddTransition(PlayerStatesEnum.Dead, dead);
         
@@ -153,9 +166,9 @@ public class PlayerController : MonoBehaviour
         OnHit?.Invoke(damage);   
     }
 
-    public void CrouchCommand()
+    public void CrouchCommand(bool crouch)
     {
-        OnCrouch?.Invoke();
+        OnCrouch?.Invoke(crouch);
     }
     public void CrouchAttackCommand(int dmg)
     {
