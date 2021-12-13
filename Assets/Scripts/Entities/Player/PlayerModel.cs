@@ -125,15 +125,18 @@ public class PlayerModel : Actor
     #region JumpFall
     public override void Jump()
     {
+        float jumpMult = 1f;
         isJumping = true;
-        if (CheckIfGrounded())
+        if (!CheckIfGrounded())
         {
-            _rb.velocity = new Vector2(_rb.velocity.x, 0f);
-            var jumpForce = data.jumpHeight * transform.up;
-            _rb.AddForce(jumpForce, ForceMode2D.Impulse);
-            CreateDust();
-           
+            jumpMult = 0.75f;
         }
+
+        _rb.velocity = new Vector2(_rb.velocity.x, 0f);
+        var jumpForce = data.jumpHeight * transform.up* jumpMult;
+        _rb.AddForce(jumpForce, ForceMode2D.Impulse);
+        CreateDust();
+
         _view.JumpAnimation();
     }
 

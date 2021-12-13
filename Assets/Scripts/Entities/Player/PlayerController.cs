@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         var idle = new PlayerIdleState<PlayerStatesEnum>(CheckGroundPlayer,CheckJumpPlayer,IdleCommand, PlayerStatesEnum.Run,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,PlayerStatesEnum.Crouch,PlayerStatesEnum.Jump,_playerInput );
         var run = new PlayerRunState<PlayerStatesEnum>(CheckGroundPlayer,CheckJumpPlayer, PlayerStatesEnum.Idle, PlayerStatesEnum.Jump,PlayerStatesEnum.Fall,PlayerStatesEnum.Attack,_playerInput,MoveCommand);
         var jump = new PlayerJumpState<PlayerStatesEnum>(PlayerStatesEnum.Fall, PlayerStatesEnum.Idle,JumpCommand,CheckJumpPlayer);
-        var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,_playerInput,CheckGroundPlayer,FallCommand, MoveCommand);
+        var fall = new PlayerFallState<PlayerStatesEnum>(PlayerStatesEnum.Land,PlayerStatesEnum.Jump,_playerInput,CheckGroundPlayer,FallCommand, MoveCommand);
         var crouch = new PlayerCrouchState<PlayerStatesEnum>(CheckGroundPlayer, PlayerStatesEnum.Attack,PlayerStatesEnum.Idle, PlayerStatesEnum.Fall,_playerInput,MoveCommand ,CrouchCommand);
         var land = new PlayerLandState<PlayerStatesEnum>(PlayerStatesEnum.Idle, LandCommand);
         var hit = new PlayerHitState<PlayerStatesEnum>(PlayerStatesEnum.Idle);
@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
         
         // Fall State
         fall.AddTransition(PlayerStatesEnum.Land,land);
+        fall.AddTransition(PlayerStatesEnum.Jump,jump);
         fall.AddTransition(PlayerStatesEnum.Hit, hit);
         fall.AddTransition(PlayerStatesEnum.Dead, dead);
         

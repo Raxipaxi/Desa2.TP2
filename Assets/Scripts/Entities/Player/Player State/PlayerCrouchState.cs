@@ -29,7 +29,6 @@ public class PlayerCrouchState <T> : State<T>
 
     public override void Execute()
     {
-        Debug.Log(_playerInput.IsCrouched() + " Crouch State");
         if (!_playerInput.IsCrouched())
         {
             _fsm.Transition(_idleInput);
@@ -63,7 +62,6 @@ public class PlayerCrouchState <T> : State<T>
 
     public override void Sleep()
     {
-        Debug.Log("Crouch Off");
         _onCrouch.Invoke(false);
     }
 }

@@ -2,25 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdc10c66-34c3-430c-98ea-df313a8ee755" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_CrouchAttack.anim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_CrouchAttack.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Desa2.TP2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAttack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/DemonAxe/DemonAttack.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Crouch.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_Crouch.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_CrouchWalk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_CrouchWalk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_CrouchAttack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_CrouchAttack.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Animations/Knight/Player_StandUp.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Knight/Player_StandUp.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Data/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Data/PlayerData.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerCrouchState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerCrouchState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerIdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerFallState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerFallState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerJumpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/Player State/PlayerJumpState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInputJoy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInputJoy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInputJoy.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerInputs/PlayerInputJoy.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entities/Player/PlayerView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Strategy/iInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Strategy/iInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchAttack.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Knight/120x80_PNGSheets/Crouch/_CrouchAttack.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tile Palettes/Rocks.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tile Palettes/Rocks.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,6 +145,9 @@
       <workItem from="1639319527855" duration="954000" />
       <workItem from="1639320878423" duration="1623000" />
       <workItem from="1639353328585" duration="3719000" />
+      <workItem from="1639359758935" duration="935000" />
+      <workItem from="1639401896663" duration="5740000" />
+      <workItem from="1639414995040" duration="777000" />
     </task>
     <task id="LOCAL-00001" summary="DemonAxe Added">
       <created>1635979042829</created>

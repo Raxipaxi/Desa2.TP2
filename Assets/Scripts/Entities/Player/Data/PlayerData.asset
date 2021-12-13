@@ -15,7 +15,7 @@ MonoBehaviour:
   walkSpeed: 6
   speedFallPenalty: 1
   groundDistance: 1.5
-  jumpHeight: 14
+  jumpHeight: 20
   groundDetectionList:
     serializedVersion: 2
     m_Bits: 8

@@ -34,8 +34,7 @@ public class PlayerInput : MonoBehaviour, iInput
     }
 
     private void Crouched(bool crouch)
-    {
-        Debug.Log(crouch);
+    { 
         _crouch = crouch;
     }
     public bool IsCrouched()
