@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e675645312957ab488622a86870c027c
+guid: a0f3f61b7eabc0c4f9e85f0851ab025e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3302175319379374981
-    second: _Crouch_0
+      213: 5686849686016059496
+    second: attack-B5_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _Crouch_0
+      name: attack-B5_0
       rect:
         serializedVersion: 2
-        x: 43
+        x: 4
         y: 0
-        width: 29
-        height: 27
+        width: 76
+        height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7c845eea015c22d0800000000000000
-      internalID: -3302175319379374981
+      spriteID: 8686702c8afbbee40800000000000000
+      internalID: 5686849686016059496
       vertices: []
       indices: 
       edges: []

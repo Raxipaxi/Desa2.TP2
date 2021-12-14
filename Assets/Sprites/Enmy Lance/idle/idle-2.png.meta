@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e675645312957ab488622a86870c027c
+guid: d11eac7e26b0ae043be12c49404af6ca
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3302175319379374981
-    second: _Crouch_0
+      213: 4471068245394927947
+    second: idle-2_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _Crouch_0
+      name: idle-2_0
       rect:
         serializedVersion: 2
-        x: 43
+        x: 20
         y: 0
-        width: 29
-        height: 27
+        width: 76
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7c845eea015c22d0800000000000000
-      internalID: -3302175319379374981
+      spriteID: b413b4561ec6c0e30800000000000000
+      internalID: 4471068245394927947
       vertices: []
       indices: 
       edges: []

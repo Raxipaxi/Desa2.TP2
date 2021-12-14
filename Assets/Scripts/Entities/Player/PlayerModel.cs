@@ -24,6 +24,7 @@ public class PlayerModel : Actor
     private bool isAlive;
 
     private bool isCrouched;
+    private bool isGrounded;
 
     private bool isFacingRight;//Checks where is facing
     private bool isJumping;//Checks if it already jumping
@@ -38,6 +39,7 @@ public class PlayerModel : Actor
         isFacingRight = true;
         isJumping = false;
         isCrouched = false;
+        isGrounded = true;
     }
 
     void BakeReferences()
@@ -161,11 +163,14 @@ public class PlayerModel : Actor
     }
     public bool CheckIfGrounded()
     {
+        
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, data.groundDistance, data.groundDetectionList);
         Debug.DrawRay(_transform.position, Vector2.down*data.groundDistance, Color.cyan);
         if(hit.collider != null)
             return true;
+
         return false;
+        //return isGrounded;
     }
     #endregion
 
@@ -206,5 +211,31 @@ public class PlayerModel : Actor
     {
         jumpDust.Play();
     }
+
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     Debug.Log("Pum");
+    //     var floor = other.GetComponent<GameObject>().layer;
+    //     if (data.groundDetectionList == floor)
+    //     {
+    //         isGrounded = true;
+    //     }
+    // }
+    //
+    // private void OnTriggerStay2D(Collider2D other)
+    // {
+    //     Debug.Log("Kachau");
+    //     var floor = other.GetComponent<LayerMask>().value;
+    //     if (data.groundDetectionList == floor)
+    //     {
+    //         isGrounded = true;
+    //     }
+    // }
+    //
+    // private void OnCollisionExit2D(Collision2D other)
+    // {
+    //     Debug.Log("out");
+    //         isGrounded = false;
+    // }
 }
 //TODO arreglar que el hit tambien lo informe el controller
