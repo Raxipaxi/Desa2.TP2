@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: a6a73b2122a5d5d41b5a372944f5d482
+guid: 74c316b7dbdac07439fdb428ab01fe90
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -492015783350770160
+    second: dead-2_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -113,7 +116,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: dead-2_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 76
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016ed7970420c29f0800000000000000
+      internalID: -492015783350770160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

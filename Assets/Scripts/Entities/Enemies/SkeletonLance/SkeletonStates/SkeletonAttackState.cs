@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class DAxeAttackState<T> : State<T>
+public class SkeletonAttackState<T> : State<T>
 {
     private float _attackCd;
     private float _counter;
@@ -10,7 +10,7 @@ public class DAxeAttackState<T> : State<T>
     private iNode _root;
     private Action<bool> _idleCD;
 
-    public DAxeAttackState(float attackCd, Action<int> onAttack,Action<bool> idleCD, iNode root)
+    public SkeletonAttackState(float attackCd, Action<int> onAttack,Action<bool> idleCD, iNode root)
     {
         _attackCd = attackCd;
         _onAttack = onAttack;

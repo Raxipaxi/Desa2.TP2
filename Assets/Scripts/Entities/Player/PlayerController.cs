@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     private bool isCrouch;
     
     #region Actions
-    public event Action<int> OnAttack, OnCrouchAttack;
-    public event Action<Vector2> OnMove, OnCrouchMove;
+    public event Action<int> OnAttack;
+    public event Action<Vector2> OnMove;
     public event Action OnJump;
     public event Action OnFall;
     public event Action OnLand;
@@ -171,10 +171,7 @@ public class PlayerController : MonoBehaviour
     {
         OnCrouch?.Invoke(crouch);
     }
-    public void CrouchAttackCommand(int dmg)
-    {
-        OnCrouchAttack?.Invoke(dmg);
-    }
+
     
     public void DieCommand()
     {
@@ -188,7 +185,7 @@ public class PlayerController : MonoBehaviour
     #endregion
     private void Update()
     {
-        if (_playerModel != null)
+        if (_playerModel != null) 
         {
             _fsm.OnUpdate();
             

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb8d36ca3b1a455c957c52afd8f8de41, type: 3}
-  m_Name: AxeDemon
+  m_Name: SkeletonData
   m_EditorClassIdentifier: 
-  walkSpeed: 1.5
+  walkSpeed: 3
   runSpeed: 3
   groundDistance: 0.2
-  damage: 20
-  attackCooldown: 4
-  attackDist: 3
-  maxLife: 40
+  damage: 35
+  attackCooldown: 5
+  attackDist: 6
+  maxLife: 55

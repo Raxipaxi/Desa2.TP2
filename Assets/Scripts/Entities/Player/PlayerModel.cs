@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerModel : Actor
@@ -113,8 +114,14 @@ public class PlayerModel : Actor
         _view.Attack(moving);
         AudioManager.instance.PlayPlayerSound(PlayerSoundClips.Attack);
         EnemyHitCheck()?.TakeDamage(data.damage*dmgModifier);
+        var attackWait = AttackWait(0.9f);
+        StartCoroutine(attackWait);
     }
-   
+
+    IEnumerator AttackWait(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+    }
     private void Flip()
     {
 

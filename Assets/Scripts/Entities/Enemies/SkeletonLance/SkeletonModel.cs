@@ -1,19 +1,15 @@
-using System;
+﻿using System;
 using UnityEngine;
-
-
-public class DAxeModel : Actor
+public class SkeletonModel : Actor
 {
     #region Properties
 
     [SerializeField] public EnemyData data;
     [SerializeField] private ParticleSystem bloodSplash;
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRadius;
     [SerializeField] private LayerMask playerMask;
     
     private Rigidbody2D _rb;
-    private DAxeView _dAxeView;
+    private SkeletonView _skeletonView;
     private int _currLife;
     private Transform _transform;
     public event Action OnDie;
@@ -39,14 +35,13 @@ public class DAxeModel : Actor
     public void BakeReferences()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _dAxeView = GetComponent<DAxeView>();
+        _skeletonView = GetComponent<SkeletonView>();
     }
 
-    public void Subscribe(DAxeController controller)
+    public void Subscribe(SkeletonController controller)
     {
         controller.OnAttack += Attack;
         controller.OnIdle += Idle;
-        controller.OnRun += Run;
         controller.OnWalk += Walk;
         
     }
@@ -68,16 +63,8 @@ public class DAxeModel : Actor
     }
 
     #region Movement
-
-    void Run(Vector2 dir)
-    {
-        _dAxeView.isRunning = true;
-        currSpeed = data.runSpeed;
-        Move(dir);
-    }    
     void Walk(Vector2 dir)
     {
-        _dAxeView.isRunning = false;
         currSpeed = data.walkSpeed;
         Move(dir);
     }
@@ -113,20 +100,21 @@ public class DAxeModel : Actor
     }
     private void PlayerHitCheck()
     {
-        var hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius,playerMask); //  nonallocate masmejor
-
-        if (hit!=null)
-        {
-            var player =  hit.GetComponent<IDamageable>();
+        //    LO VA A TENER LA LANZA
         
-            player?.TakeDamage(data.damage);
-        }
+        //
+        // if (hit!=null)
+        // {
+        //     var player =  hit.GetComponent<IDamageable>();
+        //
+        //     player?.TakeDamage(data.damage);
+        // }
 
     }
     private void OnDrawGizmo()
     {
         Gizmos.color= Color.red;
-        Gizmos.DrawWireSphere(attackPoint.position,attackRadius);
+   
     }
 
     #endregion

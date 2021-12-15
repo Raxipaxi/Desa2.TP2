@@ -14,6 +14,6 @@ public class PlayerDeadState<T> : State<T>
     public override void Execute()
     {
         // _onDead?.Invoke();
-        Debug.Log("eso es todo viejo");
+       
     }
 }

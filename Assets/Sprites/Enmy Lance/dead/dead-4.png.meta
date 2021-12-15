@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 8cd0feb0716879b4988b416acbf2a81f
+guid: 635d2821e3ed3df46945bb2d487eb1e5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1981913480884596681
-    second: attack-A3_0
-  - first:
-      213: -3522419206719050066
-    second: attack-A3_1
+      213: 6023932825458076475
+    second: dead-4_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,43 +118,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: attack-A3_0
+      name: dead-4_0
       rect:
         serializedVersion: 2
-        x: 35
+        x: 18
         y: 0
-        width: 81
-        height: 57
+        width: 78
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 730d0549034de74e0800000000000000
-      internalID: -1981913480884596681
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: attack-A3_1
-      rect:
-        serializedVersion: 2
-        x: 109
-        y: 23
-        width: 16
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eae6f71e46add1fc0800000000000000
-      internalID: -3522419206719050066
+      spriteID: b3b6e341dfe499350800000000000000
+      internalID: 6023932825458076475
       vertices: []
       indices: 
       edges: []
