@@ -10,13 +10,15 @@ public class SkeletonIdleState<T> : State<T>
     private float _counter;
     private float _currCounter;
     private Action<bool> _idleCD;
+    private Func<bool> _canAttack;
 
-    public SkeletonIdleState(Action onIdle, float counter, Action<bool> idleCd, iNode root)
+    public SkeletonIdleState(Func<bool> canAttack, Action onIdle, float counter, Action<bool> idleCd, iNode root)
     {
         _root = root;
         _onIdle = onIdle;
         _counter = counter;
         _idleCD = idleCd;
+        _canAttack = canAttack;
   
         ResetCount();
     }
@@ -27,7 +29,7 @@ public class SkeletonIdleState<T> : State<T>
 
         _currCounter -= Time.deltaTime;
         
-        if (!(_currCounter<=0)) return;
+        if (!(_currCounter<=0)&&!_canAttack()) return;
         ResetCount();
         _idleCD?.Invoke(false);
         _root.Execute();

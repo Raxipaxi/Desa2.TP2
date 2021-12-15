@@ -43,15 +43,16 @@ public class AudioManager : MonoBehaviour
 
     public void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        instance = this;
+        // if (instance != null)
+        // {
+        //     Destroy(gameObject);
+        // }
+        // else
+        // {
+        //     instance = this;
+        //     DontDestroyOnLoad(gameObject);
+        // }
     }
 
     public void EnviromentMusic(EnviromentSoundClip soundClip)

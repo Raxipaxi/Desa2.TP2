@@ -7,6 +7,7 @@ public class PlayerLifeController : MonoBehaviour
     // private LifeUIManager _lifeUI;
     private PlayerModel _player;
     [SerializeField] private Animator _screenFeedback;
+    
     private int _currLife;
 
     public event Action OnDie;

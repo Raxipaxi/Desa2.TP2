@@ -12,16 +12,18 @@ public class SkeletonPatrolState<T> : State<T>
     private Transform[] _waypoints;
     private Transform _currWaypoint;
     private Transform _transform;
-    
+    private Func<bool> _canAttack;
+
     private HashSet<Transform> _visited;
     
     private float _minDistance;
 
-    public SkeletonPatrolState(Transform[] waypoints, Transform transform, Action<Vector2> onWalk,Action<bool> idleCD,float minDistance, iNode root)
+    public SkeletonPatrolState(Func<bool> canattack,Transform[] waypoints, Transform transform, Action<Vector2> onWalk,Action<bool> idleCD,float minDistance, iNode root)
     {
         _root = root;
         _waypoints = waypoints;
         _onWalk = onWalk;
+        _canAttack = canattack;
 
         _minDistance = minDistance;
         _transform = transform;
@@ -40,9 +42,9 @@ public class SkeletonPatrolState<T> : State<T>
 
     public override void Execute()
     {
-        
         _onWalk?.Invoke(_currWaypoint.position);
 
+        if(_canAttack()){ _root.Execute(); return; }
         var distNext = Vector2.Distance(_currWaypoint.position, _transform.position);
         
         if (distNext > _minDistance) return;
@@ -66,7 +68,6 @@ public class SkeletonPatrolState<T> : State<T>
                 break;
             }
         }
-        
         _visited.Add(_currWaypoint);
 
         if (_visited.Count >=  _waypoints.Length)

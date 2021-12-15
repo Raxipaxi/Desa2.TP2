@@ -48,7 +48,7 @@ public class SkeletonModel : Actor
     public override void TakeDamage(int damage)
     {
         _currLife -= damage;
-        // Debug.LogWarning("Me hicieron nana " + damage);
+       // Debug.LogWarning("Me hicieron nana " + damage);
         OnHit?.Invoke();
         bloodSplash.Play();
         if (_currLife<=0)

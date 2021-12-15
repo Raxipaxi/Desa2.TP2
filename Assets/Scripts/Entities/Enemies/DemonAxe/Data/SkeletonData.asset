@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb8d36ca3b1a455c957c52afd8f8de41, type: 3}
   m_Name: SkeletonData
   m_EditorClassIdentifier: 
-  walkSpeed: 3
-  runSpeed: 3
+  walkSpeed: 5
+  runSpeed: 5
   groundDistance: 0.2
   damage: 35
-  attackCooldown: 5
-  attackDist: 6
+  attackCooldown: 3
+  attackDist: 3
   maxLife: 55

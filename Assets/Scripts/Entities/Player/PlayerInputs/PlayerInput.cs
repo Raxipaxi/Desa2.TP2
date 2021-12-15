@@ -58,7 +58,6 @@ public class PlayerInput : MonoBehaviour, iInput
 
         _xAxis = currX > 0 ? 1f : -1f;
     }
-
     private void OnEnable()
     {
         _joyInput.Enable();

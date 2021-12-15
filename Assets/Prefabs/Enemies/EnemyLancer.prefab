@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5535000388735903300}
   - component: {fileID: 7987339920578597913}
+  - component: {fileID: 410240452}
   m_Layer: 0
   m_Name: Lance
   m_TagString: Untagged
@@ -41,7 +42,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 1.1557499, y: 0.020276397}
@@ -57,6 +58,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.4598944, y: 0.24977273}
   m_EdgeRadius: 0
+--- !u!114 &410240452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3169677720820493560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22520f0c890436eb516df59e0a4f28c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: b0dfb31af6d3fe64babe25131dcfcdeb, type: 2}
 --- !u!1 &5110769090028574108
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,9 +85,9 @@ GameObject:
   - component: {fileID: 1552611973145653803}
   - component: {fileID: 1369269378084823977}
   - component: {fileID: 7508497503249588661}
-  - component: {fileID: 1835188429376176907}
   - component: {fileID: 5210022896962665549}
-  m_Layer: 0
+  - component: {fileID: 876709727}
+  m_Layer: 8
   m_Name: EnemyLancer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +160,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &7205662174085648184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _minDistance: 0.2
+  _minDistance: 0.5
   isDead: 0
   _idleCD: 1.5
   waypoints:
@@ -179,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: b0dfb31af6d3fe64babe25131dcfcdeb, type: 2}
-  bloodSplash: {fileID: 0}
+  bloodSplash: {fileID: 6165563980956268357}
   playerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -214,27 +228,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &1835188429376176907
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5110769090028574108}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 6
 --- !u!61 &5210022896962665549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -261,6 +254,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4956347, y: 3.8125}
   m_EdgeRadius: 0
+--- !u!50 &876709727
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5110769090028574108}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 20
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!1 &8666578676566880265
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,7 +315,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8666578676566880265}
   serializedVersion: 7
-  lengthInSec: 0.1
+  lengthInSec: 0.2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -376,7 +390,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -545,7 +559,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -926,7 +940,7 @@ ParticleSystem:
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 0.5
     donutRadius: 0.2
-    m_Position: {x: -1.31, y: 0, z: 0}
+    m_Position: {x: -1.42, y: 0.35, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
@@ -1126,7 +1140,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 125
+      scalar: 150
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1565,7 +1579,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -5043,7 +5057,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.3
+  m_MaxParticleSize: 0.6
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2

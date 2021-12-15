@@ -78,8 +78,8 @@ public class SkeletonController : MonoBehaviour
     void InitFSM()
     {
         // FSM States
-        var idle = new SkeletonIdleState<DAxeStatesEnum>(IdleCommand,_idleCD,SetIdleCDOn,_root);
-        var patrol = new SkeletonPatrolState<DAxeStatesEnum>(waypoints,_transform,WalkCommand,SetIdleCDOn, _minDistance,_root);
+        var idle = new SkeletonIdleState<DAxeStatesEnum>(CanAttack,IdleCommand,_idleCD,SetIdleCDOn,_root);
+        var patrol = new SkeletonPatrolState<DAxeStatesEnum>(CanAttack,waypoints,_transform,WalkCommand,SetIdleCDOn, _minDistance,_root);
         var attack = new SkeletonAttackState<DAxeStatesEnum>(_skeletonModel.data.attackCooldown, AttackCommand,SetIdleCDOn, _root);
       //  var hit = new SkeletonHitState<DAxeStatesEnum>(_root);
         var dead = new SkeletonDeadState<DAxeStatesEnum>(DestroyEnemy);
