@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmbienMusic : MonoBehaviour
+public class AmbientMusic : MonoBehaviour
 {
     [SerializeField] private AudioSource _backgroundMusic;
     // Start is called before the first frame update

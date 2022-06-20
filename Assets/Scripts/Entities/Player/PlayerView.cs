@@ -38,7 +38,6 @@ public class PlayerView : MonoBehaviour
     
     public void IdleAnimation()
     {
-        
         _playerAnimator.SetBool(PlayerAnimParameters.IsRunning,false);
         _playerAnimator.SetBool(PlayerAnimParameters.IsCrouched,false);
     }

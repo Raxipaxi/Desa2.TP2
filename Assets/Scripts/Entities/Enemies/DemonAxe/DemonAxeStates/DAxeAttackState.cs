@@ -34,6 +34,11 @@ public class DAxeAttackState<T> : State<T>
         }
     }
 
+    public override void Sleep()
+    {
+        base.Sleep();
+    }
+
     private void ResetCd()
     {
         _counter = Time.time + _attackCd;

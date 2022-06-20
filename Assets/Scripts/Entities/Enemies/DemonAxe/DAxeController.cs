@@ -67,8 +67,7 @@ public class DAxeController : MonoBehaviour
         var goToIdle= new ActionNode(() => _fsm.Transition(DAxeStatesEnum.Idle));
         var goToPatrol = new ActionNode(() => _fsm.Transition(DAxeStatesEnum.Patrol));
         var goToRun = new ActionNode(() => _fsm.Transition(DAxeStatesEnum.Run));
-        //var goToDead = new ActionNode(() => _fsm.Transition(DAxeStatesEnum.Dead));
-        
+
         // Question Nodes
 
         QuestionNode isInReach = new QuestionNode(CanAttack, goToAttack, goToRun);
@@ -86,7 +85,6 @@ public class DAxeController : MonoBehaviour
         var patrol = new DAxePatrolState<DAxeStatesEnum>(CanSeeTheTarget, waypoints,_transform,WalkCommand,SetIdleCDOn, _minDistance,_root);
         var run = new DAxeRunState<DAxeStatesEnum>( RunCommand,Target,CanAttack, CanSeeTheTarget, _root);
         var attack = new DAxeAttackState<DAxeStatesEnum>(_dAxeModel.data.attackCooldown, AttackCommand,SetIdleCDOn, _root);
-    //    var hit = new DAxeHitState<DAxeStatesEnum>(_root);
         var dead = new DAxeDeadState<DAxeStatesEnum>(DestroyEnemy);
     
         //Idle
@@ -178,7 +176,7 @@ public class DAxeController : MonoBehaviour
         var canSee = distanceBetweenTarget - _sightLenght;
         var iCanSeeU = canSee <= _seen;
 
-        return iCanSeeU;
+        return iCanSeeU; 
     }
        
     public bool CanAttack()

@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditorInternal;
 using UnityEngine;
 
 
@@ -12,7 +13,7 @@ public class DAxeRunState<T> : State<T>
     private Action<Vector2> _onRun;
     private iNode _root;
 
-    public DAxeRunState(Action<Vector2> onRun,Transform target, Func<bool> canAttack,Func<bool> isSeen,iNode root)
+    public DAxeRunState(Action<Vector2> onRun,Transform target, Func<bool> canAttack,Func<bool> isSeen,iNode root) 
     {
         _onRun = onRun;
         _target = target;
@@ -21,13 +22,24 @@ public class DAxeRunState<T> : State<T>
         _root = root;
     }
 
+    public override void Awake()
+    {
+        
+    }
+
     public override void Execute()
     {
         var onSight = _isSeen();
+        
         _onRun?.Invoke(_target.position);
 
         if (!onSight) { _root.Execute(); return; }
         
         if (_canAttack()) _root.Execute();
+    }
+
+    public override void Sleep()
+    {
+        base.Sleep();
     }
 }

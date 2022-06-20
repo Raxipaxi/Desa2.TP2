@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Globalization;
 
 public class PlayerController : MonoBehaviour
 {
@@ -112,7 +113,6 @@ public class PlayerController : MonoBehaviour
         hit.AddTransition(PlayerStatesEnum.Idle,idle);
         hit.AddTransition(PlayerStatesEnum.Dead, dead);
         
-
         _fsm = new FSM<PlayerStatesEnum>();
         // Set init state
         _fsm.SetInit(idle);

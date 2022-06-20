@@ -117,6 +117,7 @@ public class PlayerModel : Actor
         var attackWait = AttackWait(0.9f);
         StartCoroutine(attackWait);
     }
+    
 
     IEnumerator AttackWait(float waitTime)
     {
